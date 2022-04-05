@@ -226,7 +226,7 @@ body {
     padding: 4%
 }
 
-.mens p, .womens p, .descriptionText p {
+.mens a, .womens a, .descriptionText p {
     font-size:28px;
 }
 
@@ -251,3 +251,12 @@ body {
 
 }
 
+.mens:hover {
+    transform: scale(1.1);
+}
+
+
+.mens {
+    transition: transform 0.2;
+
+}
