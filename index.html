@@ -22,36 +22,61 @@
 
 
 
-        <div class="slider">
+        <div class="slider" id="slider">
 
             <div id="leftArrow">
-                <p><</p> 
+                <button onclick="changeSlider()"><</button> 
             </div> 
             
             <div id="rightArrow">
-                <p>></p>
+                <button onclick="changeSlider()">></button>
             </div>
 
             <div class="sliderImg">
-                <img src="/images/background2.png">
-                <img src="/images/background1.png">
+                <img id="sliderImg1" src="/images/background2.png">
+                <img id="sliderImg2" src="/images/background1.png">
 
             </div>
 
-            <p class="sliderText">
+            <p class="sliderText" id="sliderText">
                 New season styles available now!
                 <br><br>
                 20% off for a limited time!
             </p>
 
+
+            <p class="sliderText" id="originalSliderText">
+                New season styles available now!
+                <br><br>
+                20% off for a limited time!
+            </p>
+
+
+
+            <p class="sliderText" id="hiddenSliderText">
+                Stock clearance!
+                <br><br>
+                T-shirts from $8.99!
+            </p>
+
+
             <div class="sliderButton">
-                <button onclick="window.location.href='products.html';">SHOP NOW</button>
+                <button id="shopNowButton" onclick="window.location.href='products.html';">SHOP NOW</button>
 
             </div>
 
+            <div class="dot" id="dot1">
+                <img id="dot1img" src="/images/dot.png">
+            </div>
+
+
+            <div class="dot" id="dot2">
+                <img id="dot2img" src="/images/dot2.png">
+            </div>
         </div>
 
 
+        
         <div class="products">
             <div class="mensImg">
                 <img src="images/yellow tshirt.png">
@@ -72,6 +97,8 @@
             <div class="descriptionText">
                 <p>Shop at Myshirt<br><br>to get the latest<br><br>styles at an<br><br>affordable price.</p>
             </div>
+
+
             <div class="womens">
                 <p>womens</p>
             </div>

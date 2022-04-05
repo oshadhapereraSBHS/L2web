@@ -44,13 +44,19 @@ nav {
     padding-bottom: 1%;
 }
 
-.sliderImg img,
+
 .products img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
 
 }
 
+
+.sliderImg img{
+    width: 300px;
+    height: 300px;
+
+}
 
 .slider {
     grid-column: 1/4;
@@ -58,7 +64,7 @@ nav {
     display: grid;
     grid-template-columns: 5% 1fr 1fr 5%;
     grid-template-rows: auto;
-    background-image: url('../images/sliderimg.png');
+    background-image: url('../images/sliderimg2.png');
     padding: 2%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -78,7 +84,7 @@ nav {
 }
 
 .sliderText {
-    font-size: 20px;
+    font-size: 28px;
 }
 
 .sliderText {
@@ -99,8 +105,15 @@ nav {
 #leftArrow p,
 #rightArrow p {
     color: white;
-    font-size: 32px;
+    font-size: 40px;
 
+}
+
+#leftArrow button, #rightArrow button {
+    border: none;
+    background-color: transparent;
+    color:rgba(255, 255, 255, 0.8);
+    font-size: 40px;
 }
 
 #leftArrow {
@@ -160,7 +173,7 @@ a:hover {
 
 }
 
-button {
+#shopNowButton {
 
     display: inline;
     background-color: #441a4b;
@@ -191,7 +204,7 @@ body {
     background-color: rgb(255, 255, 255, 0.6);
     box-shadow: 0px 0px 5px grey;
     margin-top: 5%;
-    padding: 2%;
+    padding: 3%;
 }
 
 .description {
@@ -212,3 +225,29 @@ body {
 .descriptionText {
     padding: 4%
 }
+
+.mens p, .womens p, .descriptionText p {
+    font-size:28px;
+}
+
+/* #dot1 {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    justify-self: end;
+    align-self: end;
+    margin-right: 1%;
+}
+
+#dot2 {
+    grid-row: 2/3;
+    grid-column: 3/4;
+    justify-self:start;  
+    align-self: end;
+    margin-left: 1%;
+}
+
+.dot img{
+    max-width: 15px;
+
+}
+ */
