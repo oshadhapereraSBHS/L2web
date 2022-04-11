@@ -367,6 +367,7 @@ iframe {
 .productTextDivs {
     display: none;
 text-align: center;
+z-index: 2;
 } 
 
 li {
@@ -384,12 +385,39 @@ li {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
 }
+
+
+.productTextDivs {
+    justify-self: center;
+    align-self: center;
+}
+
 #product1TextDiv, #product1Img {
     grid-column: 1/2;
     grid-row: 1/2;
 }
 
-.productTextDivs {
-    justify-self: center;
-    align-self: center;
+#product2TextDiv, #product2Img {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#product3TextDiv, #product3Img {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#product4TextDiv, #product4Img {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#product5TextDiv, #product5Img {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#product6TextDiv, #product6Img {
+    grid-column: 1/2;
+    grid-row: 1/2;
 }
