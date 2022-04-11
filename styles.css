@@ -325,8 +325,9 @@ iframe {
 
 .products {
     display: grid;
-    grid-template-columns: 5% 1fr 5% 1fr 5% 1fr;
+    grid-template-columns: 5% 1fr 5% 1fr 5% 1fr 5%;
     grid-template-rows: auto;
+    grid-gap: 20px;;
 }
 
 #product1 {
@@ -379,11 +380,16 @@ li {
     height: auto;
     vertical-align: middle;
     justify-self: center;
+    margin-top: 10%;
 }
 .productImgDivs {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    grid-gap: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-bottom: 20px;
+    box-shadow: 5px 5px 5px grey;
 }
 
 
@@ -420,4 +426,17 @@ li {
 #product6TextDiv, #product6Img {
     grid-column: 1/2;
     grid-row: 1/2;
+}
+
+.productPrices {
+    justify-self: center;
+    text-align: center;
+}
+
+input {
+    text-align: center;
+}
+
+.productImgDivs button {
+    justify-self: center;
 }
