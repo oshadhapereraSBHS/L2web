@@ -10,65 +10,100 @@
     <script>
 
 
+window.onload = function() {
+    localStorage.setItem("quantity1", document.getElementById("quantity1").value);
+    localStorage.setItem("quantity2", document.getElementById("quantity2").value);
+    localStorage.setItem("quantity3", document.getElementById("quantity3").value);
+    localStorage.setItem("quantity4", document.getElementById("quantity4").value);
+    localStorage.setItem("quantity5", document.getElementById("quantity5").value);
+    localStorage.setItem("quantity6", document.getElementById("quantity6").value);
+
+}
+
 function minus1(){
+
     if(quantity1.value > 0){
-        quantity1.value--
+        quantity1.value--;
+        localStorage.setItem("quantity1", document.getElementById("quantity1").value)
+
     }
 }
 
 function plus1(){
-        quantity1.value++
+        quantity1.value++;
+        localStorage.setItem("quantity1", document.getElementById("quantity1").value)
+
 }
 
 
 function minus2(){
     if(quantity2.value > 0){
-        quantity2.value--
+        quantity2.value--;
+        localStorage.setItem("quantity2", document.getElementById("quantity1").value)
+
     }
 }
 
 function plus2(){
-        quantity2.value++
+        quantity2.value++;
+        localStorage.setItem("quantity2", document.getElementById("quantity1").value)
+
 }
 
 function minus3(){
     if(quantity3.value > 0){
-        quantity3.value--
+        quantity3.value--;
+        localStorage.setItem("quantity3", document.getElementById("quantity1").value)
+
     }
 }
 
 function plus3(){
-        quantity3.value++
+        quantity3.value++;
+        localStorage.setItem("quantity3", document.getElementById("quantity1").value)
+
 }
 
 function minus4(){
     if(quantity4.value > 0){
-        quantity4.value--
+        quantity4.value--;
+        localStorage.setItem("quantity4", document.getElementById("quantity1").value)
+
     }
 }
 
 function plus4(){
-        quantity4.value++
+        quantity4.value++;
+        localStorage.setItem("quantity4", document.getElementById("quantity1").value)
+
 }
 
 function minus5(){
     if(quantity5.value > 0){
-        quantity5.value--
+        quantity5.value--;
+        localStorage.setItem("quantity5", document.getElementById("quantity1").value)
+
     }
 }
 
 function plus6(){
-        quantity6.value++
+        quantity6.value++;
+        localStorage.setItem("quantity5", document.getElementById("quantity1").value)
+
 }
 
 function minus7(){
     if(quantity7.value > 0){
-        quantity7.value--
+        quantity7.value--;
+        localStorage.setItem("quantity6", document.getElementById("quantity1").value)
+
     }
 }
 
 function plus7(){
-        quantity7.value++
+        quantity7.value++;
+        localStorage.setItem("quantity7", document.getElementById("quantity1").value)
+
 }
 
 
@@ -84,6 +119,7 @@ function plus7(){
             <a class="navLink" href="index.html">Home</a>
             <a class="navLink" href="products.html">Products</a>
             <a class="navLink" href="contact.html">Contact</a>
+            <a class="navLink" href="cart.html">cart</a>
         </nav>
 
         <ul class="products">

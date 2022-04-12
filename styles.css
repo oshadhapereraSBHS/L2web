@@ -360,7 +360,9 @@ iframe {
 .productImgs:hover + .productTextDivs{
     display: block;
 }
-
+.productTextDivs:hover{
+    display: block;
+}
 .productImgs:hover{
     opacity: 0.6;
 }
