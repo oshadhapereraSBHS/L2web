@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+    <title>MyShirt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <script>
+function abc(){
+    document.getElementById("hi").innerHTML = localStorage.getItem("quantity1")
+}
+    </script>
+
+    <section class="home">
+
+        <div class="logo">
+            <img class="logoImg" src="images/logo.png">
+        </div>
+        <nav>
+            <a class="navLink" href="index.html">Home</a>
+            <a class="navLink" href="products.html">Products</a>
+            <a class="navLink" href="contact.html">Contact</a>
+        </nav>
+
+            <button onclick="abc()"></button>
+<p id="hi"></p>
+
+    </section>
+</body>
