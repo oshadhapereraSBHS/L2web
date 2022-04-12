@@ -8,106 +8,113 @@
 <body>
 
     <script>
+        window.onload = function () {
+            localStorage.setItem("quantity1", document.getElementById("quantity1").value);
+            localStorage.setItem("quantity2", document.getElementById("quantity2").value);
+            localStorage.setItem("quantity3", document.getElementById("quantity3").value);
+            localStorage.setItem("quantity4", document.getElementById("quantity4").value);
+            localStorage.setItem("quantity5", document.getElementById("quantity5").value);
+            localStorage.setItem("quantity6", document.getElementById("quantity6").value);
+
+        }
+
+        function minus1() {
+
+            if (quantity1.value > 0) {
+                quantity1.value--;
+
+            }
+        }
+
+        function plus1() {
+            quantity1.value++;
+
+        }
 
 
-window.onload = function() {
-    localStorage.setItem("quantity1", document.getElementById("quantity1").value);
-    localStorage.setItem("quantity2", document.getElementById("quantity2").value);
-    localStorage.setItem("quantity3", document.getElementById("quantity3").value);
-    localStorage.setItem("quantity4", document.getElementById("quantity4").value);
-    localStorage.setItem("quantity5", document.getElementById("quantity5").value);
-    localStorage.setItem("quantity6", document.getElementById("quantity6").value);
+        function minus2() {
+            if (quantity2.value > 0) {
+                quantity2.value--;
 
-}
+            }
+        }
 
-function minus1(){
+        function plus2() {
+            quantity2.value++;
 
-    if(quantity1.value > 0){
-        quantity1.value--;
-        localStorage.setItem("quantity1", document.getElementById("quantity1").value)
+        }
 
-    }
-}
+        function minus3() {
+            if (quantity3.value > 0) {
+                quantity3.value--;
 
-function plus1(){
-        quantity1.value++;
-        localStorage.setItem("quantity1", document.getElementById("quantity1").value)
+            }
+        }
 
-}
+        function plus3() {
+            quantity3.value++;
 
+        }
 
-function minus2(){
-    if(quantity2.value > 0){
-        quantity2.value--;
-        localStorage.setItem("quantity2", document.getElementById("quantity1").value)
+        function minus4() {
+            if (quantity4.value > 0) {
+                quantity4.value--;
 
-    }
-}
+            }
+        }
 
-function plus2(){
-        quantity2.value++;
-        localStorage.setItem("quantity2", document.getElementById("quantity1").value)
+        function plus4() {
+            quantity4.value++;
 
-}
+        }
 
-function minus3(){
-    if(quantity3.value > 0){
-        quantity3.value--;
-        localStorage.setItem("quantity3", document.getElementById("quantity1").value)
+        function minus5() {
+            if (quantity5.value > 0) {
+                quantity5.value--;
 
-    }
-}
+            }
+        }
 
-function plus3(){
-        quantity3.value++;
-        localStorage.setItem("quantity3", document.getElementById("quantity1").value)
+        function plus6() {
+            quantity6.value++;
 
-}
+        }
 
-function minus4(){
-    if(quantity4.value > 0){
-        quantity4.value--;
-        localStorage.setItem("quantity4", document.getElementById("quantity1").value)
+        function minus7() {
+            if (quantity7.value > 0) {
+                quantity7.value--;
 
-    }
-}
+            }
+        }
 
-function plus4(){
-        quantity4.value++;
-        localStorage.setItem("quantity4", document.getElementById("quantity1").value)
+        function plus7() {
+            quantity7.value++;
 
-}
+        }
 
-function minus5(){
-    if(quantity5.value > 0){
-        quantity5.value--;
-        localStorage.setItem("quantity5", document.getElementById("quantity1").value)
+        function updateQuantity1() {
+            localStorage.setItem("quantity1", document.getElementById("quantity1").value)
+        }
 
-    }
-}
+        function updateQuantity2() {
+            localStorage.setItem("quantity2", document.getElementById("quantity2").value)
+        }
 
-function plus6(){
-        quantity6.value++;
-        localStorage.setItem("quantity5", document.getElementById("quantity1").value)
+        function updateQuantity3() {
+            localStorage.setItem("quantity3", document.getElementById("quantity3").value)
+        }
 
-}
+        function updateQuantity4() {
+            localStorage.setItem("quantity4", document.getElementById("quantity4").value)
+        }
 
-function minus7(){
-    if(quantity7.value > 0){
-        quantity7.value--;
-        localStorage.setItem("quantity6", document.getElementById("quantity1").value)
+        function updateQuantity5() {
+            localStorage.setItem("quantity5", document.getElementById("quantity5").value)
+        }
 
-    }
-}
-
-function plus7(){
-        quantity7.value++;
-        localStorage.setItem("quantity7", document.getElementById("quantity1").value)
-
-}
-
-
-
+        function updateQuantity6() {
+            localStorage.setItem("quantity6", document.getElementById("quantity6").value)
+        }
     </script>
 
     <section class="home">
@@ -143,10 +150,10 @@ function plus7(){
                 <p class="productPrices">$10.99<br><br>
                     <button class="minus" onclick="minus1()">-</button>
                     <input type="number" min="0" id="quantity1" step="1" value="0">
-                    <button class="plus"onclick="plus1()">+</button><br>
+                    <button class="plus" onclick="plus1()">+</button><br>
                 </p>
 
-                <button id="add1">Add to Cart</button>
+                <button id="add1" onclick="updateQuantity1()">Add to Cart</button>
 
             </li>
 
@@ -165,11 +172,11 @@ function plus7(){
 
                 <p class="productPrices">$11.99<br><br>
 
-                <button class="minus"onclick="minus2()">-</button>
-                <input type="number" min="0" id="quantity2" step="1" value="0">
-                <button class="plus"onclick="plus2()">+</button><br>
-            </p>
-                <button id="add2">Add to Cart</button>
+                    <button class="minus" onclick="minus2()">-</button>
+                    <input type="number" min="0" id="quantity2" step="1" value="0">
+                    <button class="plus" onclick="plus2()">+</button><br>
+                </p>
+                <button id="add2" onclick="updateQuantity1()">Add to Cart</button>
             </li>
 
             <li class="productImgDivs" id="product3">
@@ -186,11 +193,11 @@ function plus7(){
 
                 <p class="productPrices">$8.99<br><br>
 
-                <button class="minus"onclick="minus3()">-</button>
-                <input type="number" min="0" id="quantity3" step="1" value="0">
-                <button class="plus"onclick="plus3()">+</button><br>
-            </p>
-                <button id="add3">Add to Cart</button>
+                    <button class="minus" onclick="minus3()">-</button>
+                    <input type="number" min="0" id="quantity3" step="1" value="0">
+                    <button class="plus" onclick="plus3()">+</button><br>
+                </p>
+                <button id="add3" onclick="updateQuantity1()">Add to Cart</button>
             </li>
 
             <li class="productImgDivs" id="product4">
@@ -207,11 +214,11 @@ function plus7(){
 
                 <p class="productPrices">$10.99<br><br>
 
-                <button class="minus"onclick="minus4()">-</button>
-                <input type="number" min="0" id="quantity4" step="1" value="0">
-                <button class="plus"onclick="plus4()">+</button><br>
-            </p>
-                <button id="add4">Add to Cart</button>
+                    <button class="minus" onclick="minus4()">-</button>
+                    <input type="number" min="0" id="quantity4" step="1" value="0">
+                    <button class="plus" onclick="plus4()">+</button><br>
+                </p>
+                <button id="add4" onclick="updateQuantity1()">Add to Cart</button>
             </li>
 
             <li class="productImgDivs" id="product5">
@@ -228,11 +235,11 @@ function plus7(){
 
                 <p class="productPrices">$11.99<br><br>
 
-                <button class="minus"onclick="minus5()">-</button>
-                <input type="number" min="0" id="quantity5" step="1" value="0">
-                <button class="plus"onclick="plus5()">+</button><br>
-            </p>
-                <button id="add5">Add to Cart</button>
+                    <button class="minus" onclick="minus5()">-</button>
+                    <input type="number" min="0" id="quantity5" step="1" value="0">
+                    <button class="plus" onclick="plus5()">+</button><br>
+                </p>
+                <button id="add5" onclick="updateQuantity1()">Add to Cart</button>
             </li>
 
             <li class="productImgDivs" id="product6">
@@ -249,11 +256,11 @@ function plus7(){
 
                 <p class="productPrices">$8.99<br><br>
 
-                <button class="minus"onclick="minus6()">-</button>
-                <input type="number" min="0" id="quantity6" step="1" value="0">
-                <button class="plus"onclick="plus6()">+</button><br>
-            </p>
-                <button id="add6">Add to Cart</button>
+                    <button class="minus" onclick="minus6()">-</button>
+                    <input type="number" min="0" id="quantity6" step="1" value="0">
+                    <button class="plus" onclick="plus6()">+</button><br>
+                </p>
+                <button id="add6" onclick="updateQuantity1()">Add to Cart</button>
             </li>
 
 
