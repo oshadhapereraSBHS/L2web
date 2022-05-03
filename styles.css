@@ -442,3 +442,50 @@ input {
 .productImgDivs button {
     justify-self: center;
 }
+
+.cartHome {
+    display: grid;
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-rows: auto; 
+}
+
+.cartProducts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto; 
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 5px grey;
+
+    margin-bottom: 1%;
+}
+
+.cart {
+    grid-column: 2/3;
+}
+
+#change1 {
+    grid-column:2/3;
+    justify-self: middle;
+    align-self: middle;
+}
+
+.cartProducts img {
+    width:50%;
+    height: auto;
+    justify-self: center;
+    padding-top:5%;padding-bottom:5%;
+}
+
+.cartProducts p {
+    text-align: center;
+    vertical-align: middle;
+    align-self:center;
+}
+
+#change1, #change2, #change3, #change4, #change5, #change6 {
+    justify-self: center;
+    align-self: center;
+}
+
+.img1 img {
+}
