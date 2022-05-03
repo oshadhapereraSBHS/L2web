@@ -8,7 +8,40 @@
 <body>
 
     <script>
+        window.onload = function () {
+            if (localStorage.getItem("quantity1").value == null) {
+                localStorage.setItem("quantity1", 0)
+                document.getElementById("cartProducts1").style.display = "none";
 
+            }
+            if (localStorage.getItem("quantity2").value == null) {
+                localStorage.setItem("quantity2", 0)
+                document.getElementById("cartProducts2").style.display = "none";
+
+            }
+
+            if (localStorage.getItem("quantity3").value == null) {
+                localStorage.setItem("quantity3", 0)
+                document.getElementById("cartProducts3").style.display = "none";
+
+            }
+            if (localStorage.getItem("quantity4").value == null) {
+                localStorage.setItem("quantity4", 0)
+                document.getElementById("cartProducts4").style.display = "none";
+
+            }
+            if (localStorage.getItem("quantity5").value == null) {
+                localStorage.setItem("quantity5", 0)
+                document.getElementById("cartProducts5").style.display = "none";
+
+            }
+            if (localStorage.getItem("quantity6").value == null) {
+                localStorage.setItem("quantity6", 0)
+                document.getElementById("cartProducts6").style.display = "none";
+
+            }
+
+        }
     </script>
 
     <section class="cartHome">
@@ -24,9 +57,9 @@
 
 
         <ul class="cart">
-            <li class="cartProducts">
-                    <img class="ImgL" src="images/blue tshirt.png">
-                    
+            <li class="cartProducts" id="cartProducts1">
+                <img class="ImgL" src="images/blue tshirt.png">
+
                 <div id="change1">
                     <button class="minus" onclick="minus1()">-</button>
                     <input type="number" min="0" id="quantity1" step="1" value="0">
@@ -37,9 +70,9 @@
             </li>
 
 
-            <li class="cartProducts">
-                    <img src="images/green tshirt.png">
-                    
+            <li class="cartProducts" id="cartProducts2">
+                <img src="images/green tshirt.png">
+
                 <div id="change2">
                     <button class="minus" onclick="minus2()">-</button>
                     <input type="number" min="0" id="quantity2" step="1" value="0">
@@ -49,9 +82,9 @@
                 <p id="remove2">Remove</p>
             </li>
 
-            <li class="cartProducts">
-                    <img src="images/yellow tshirt.png">
-                    
+            <li class="cartProducts" id="cartProducts3">
+                <img src="images/yellow tshirt.png">
+
                 <div id="change3">
                     <button class="minus" onclick="minus3()">-</button>
                     <input type="number" min="0" id="quantity3" step="1" value="0">
@@ -61,9 +94,9 @@
                 <p id="remove3">Remove</p>
             </li>
 
-            <li class="cartProducts">
-                    <img src="images/blue tshirt w.png">
-                    
+            <li class="cartProducts" id="cartProducts4">
+                <img src="images/blue tshirt w.png">
+
                 <div id="change4">
                     <button class="minus" onclick="minus4()">-</button>
                     <input type="number" min="0" id="quantity4" step="1" value="0">
@@ -73,9 +106,9 @@
                 <p id="remove4">Remove</p>
             </li>
 
-            <li class="cartProducts">
-                    <img src="images/green tshirt w.png">
-                    
+            <li class="cartProducts" id="cartProducts5">
+                <img src="images/green tshirt w.png">
+
                 <div id="change5">
                     <button class="minus" onclick="minus5()">-</button>
                     <input type="number" min="0" id="quantity4" step="1" value="0">
@@ -85,9 +118,9 @@
                 <p id="remove5">Remove</p>
             </li>
 
-            <li class="cartProducts">
-                    <img src="images/yellow tshirt w.png">
-                    
+            <li class="cartProducts" id="cartProducts6">
+                <img src="images/yellow tshirt w.png">
+
                 <div id="change6">
                     <button class="minus" onclick="minus6()">-</button>
                     <input type="number" min="0" id="quantity4" step="1" value="0">
