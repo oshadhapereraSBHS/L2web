@@ -26,10 +26,16 @@ nav {
     justify-content: end;
     justify-items: end;
     display: grid;
-    grid-template-columns: 15% 15% 15%;
+    grid-template-columns: 15% 15% 15% 10%;
 }
 
+nav img {
 
+max-width: 35%;
+padding-right: 15%;
+align-self: center;
+
+}
 
 
 .logo {
