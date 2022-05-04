@@ -9,88 +9,124 @@
 
     <script>
         window.onload = function () {
-            localStorage.setItem("quantity1", document.getElementById("quantity1").value);
-            localStorage.setItem("quantity2", document.getElementById("quantity2").value);
-            localStorage.setItem("quantity3", document.getElementById("quantity3").value);
-            localStorage.setItem("quantity4", document.getElementById("quantity4").value);
-            localStorage.setItem("quantity5", document.getElementById("quantity5").value);
-            localStorage.setItem("quantity6", document.getElementById("quantity6").value);
+            document.getElementById("quantity1").value = localStorage.getItem("quantity1")
+            document.getElementById("quantity2").value = localStorage.getItem("quantity2")
+            document.getElementById("quantity3").value = localStorage.getItem("quantity3")
+            document.getElementById("quantity4").value = localStorage.getItem("quantity4")
+            document.getElementById("quantity5").value = localStorage.getItem("quantity5")
+            document.getElementById("quantity6").value = localStorage.getItem("quantity6")
+
+
+            if (localStorage.getItem("quantity1") == null) {
+                document.getElementById("quantity1").value = 0
+            }
+            if (localStorage.getItem("quantity2") == null) {
+                document.getElementById("quantity2").value = 0
+            }
+            if (localStorage.getItem("quantity3") == null) {
+                document.getElementById("quantity3").value = 0
+            }
+            if (localStorage.getItem("quantity4") == null) {
+                document.getElementById("quantity4").value = 0
+            }
+            if (localStorage.getItem("quantity5") == null) {
+                document.getElementById("quantity5").value = 0
+            }
+            if (localStorage.getItem("quantity6") == null) {
+                document.getElementById("quantity6").value = 0
+            }
+
 
         }
 
+
+
+
         function minus1() {
 
-            if (quantity1.value > 0) {
-                quantity1.value--;
-
+            if (localStorage.getItem("quantity1").value > 0) {
+                document.getElementById("quantity1").stepDown();
+                localStorage.setItem("quantity1",document.getElementById("quantity1").value)
             }
         }
 
         function plus1() {
-            quantity1.value++;
+            document.getElementById("quantity1").stepUp();
+            localStorage.setItem("quantity1",document.getElementById("quantity1").value)
 
         }
 
 
         function minus2() {
-            if (quantity2.value > 0) {
-                quantity2.value--;
+            if (document.getElementById("quantity2").value > 0) {
+                document.getElementById("quantity2").stepDown();
 
             }
+
         }
 
         function plus2() {
-            quantity2.value++;
+            document.getElementById("quantity2").stepUp();
 
         }
 
+
         function minus3() {
-            if (quantity3.value > 0) {
-                quantity3.value--;
+            if (document.getElementById("quantity3").value > 0) {
+                document.getElementById("quantity3").stepDown();
 
             }
+
         }
 
         function plus3() {
-            quantity3.value++;
+
+            document.getElementById("quantity3").stepUp();
 
         }
 
         function minus4() {
-            if (quantity4.value > 0) {
-                quantity4.value--;
+            if (document.getElementById("quantity4").value > 0) {
+
+                document.getElementById("quantity4").stepDown();
 
             }
         }
 
         function plus4() {
-            quantity4.value++;
+            document.getElementById("quantity5").stepUp();
+
 
         }
 
         function minus5() {
-            if (quantity5.value > 0) {
-                quantity5.value--;
+            if (document.getElementById("quantity5").value > 0) {
+                document.getElementById("quantity5").stepDown();
 
             }
+
+        }
+
+        function plus5() {
+
+            document.getElementById("quantity5").stepUp();
+
+        }
+
+        function minus6() {
+            if (document.getElementById("quantity6").value > 0) {
+                document.getElementById("quantity6").stepDown();
+
+            }
+
         }
 
         function plus6() {
-            quantity6.value++;
+            document.getElementById("quantity6").stepUp();
+
 
         }
 
-        function minus7() {
-            if (quantity7.value > 0) {
-                quantity7.value--;
-
-            }
-        }
-
-        function plus7() {
-            quantity7.value++;
-
-        }
 
         function updateQuantity1() {
             localStorage.setItem("quantity1", document.getElementById("quantity1").value)
@@ -149,7 +185,7 @@
 
                 <p class="productPrices">$10.99<br><br>
                     <button class="minus" onclick="minus1()">-</button>
-                    <input type="number" min="0" id="quantity1" step="1" value="0">
+                    <input type="number" min="0" id="quantity1" step="1">
                     <button class="plus" onclick="plus1()">+</button><br>
                 </p>
 
