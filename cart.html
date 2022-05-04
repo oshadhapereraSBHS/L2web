@@ -85,6 +85,92 @@ function remove6(){
 
 
 
+function minus1() {
+
+if (localStorage.getItem("quantity1").value > 0) {
+    document.getElementById("quantity1").stepDown();
+    localStorage.setItem("quantity1",document.getElementById("quantity1").value)
+}
+}
+
+function plus1() {
+document.getElementById("quantity1").stepUp();
+localStorage.setItem("quantity1",document.getElementById("quantity1").value)
+
+}
+
+
+function minus2() {
+if (document.getElementById("quantity2").value > 0) {
+    document.getElementById("quantity2").stepDown();
+
+}
+
+}
+
+function plus2() {
+document.getElementById("quantity2").stepUp();
+
+}
+
+
+function minus3() {
+if (document.getElementById("quantity3").value > 0) {
+    document.getElementById("quantity3").stepDown();
+
+}
+
+}
+
+function plus3() {
+
+document.getElementById("quantity3").stepUp();
+
+}
+
+function minus4() {
+if (document.getElementById("quantity4").value > 0) {
+
+    document.getElementById("quantity4").stepDown();
+
+}
+}
+
+function plus4() {
+document.getElementById("quantity5").stepUp();
+
+
+}
+
+function minus5() {
+if (document.getElementById("quantity5").value > 0) {
+    document.getElementById("quantity5").stepDown();
+
+}
+
+}
+
+function plus5() {
+
+document.getElementById("quantity5").stepUp();
+
+}
+
+function minus6() {
+if (document.getElementById("quantity6").value > 0) {
+    document.getElementById("quantity6").stepDown();
+
+}
+
+}
+
+function plus6() {
+document.getElementById("quantity6").stepUp();
+
+
+}
+
+
 
     </script>
 
