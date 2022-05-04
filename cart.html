@@ -8,40 +8,37 @@
 <body>
 
     <script>
-        window.onload = function () {
-            if (localStorage.getItem("quantity1").value == null) {
-                localStorage.setItem("quantity1", 0)
-                document.getElementById("cartProducts1").style.display = "none";
 
-            }
-            if (localStorage.getItem("quantity2").value == null) {
-                localStorage.setItem("quantity2", 0)
-                document.getElementById("cartProducts2").style.display = "none";
 
-            }
+function remove1(){
+    document.getElementById("cartProducts1").style.display = "none";
 
-            if (localStorage.getItem("quantity3").value == null) {
-                localStorage.setItem("quantity3", 0)
-                document.getElementById("cartProducts3").style.display = "none";
+}
 
-            }
-            if (localStorage.getItem("quantity4").value == null) {
-                localStorage.setItem("quantity4", 0)
-                document.getElementById("cartProducts4").style.display = "none";
+function remove2(){
+    document.getElementById("cartProducts2").style.display = "none";
 
-            }
-            if (localStorage.getItem("quantity5").value == null) {
-                localStorage.setItem("quantity5", 0)
-                document.getElementById("cartProducts5").style.display = "none";
+}
+function remove3(){
+    document.getElementById("cartProducts3").style.display = "none";
 
-            }
-            if (localStorage.getItem("quantity6").value == null) {
-                localStorage.setItem("quantity6", 0)
-                document.getElementById("cartProducts6").style.display = "none";
+}
+function remove4(){
+    document.getElementById("cartProducts4").style.display = "none";
 
-            }
+}
+function remove5(){
+    document.getElementById("cartProducts5").style.display = "none";
 
-        }
+}
+function remove6(){
+    document.getElementById("cartProducts6").style.display = "none";
+
+}
+
+
+
+
     </script>
 
     <section class="cartHome">
@@ -66,7 +63,7 @@
                     <button class="plus" onclick="plus1()">+</button><br>
                 </div>
 
-                <p id="remove1">Remove</p>
+                <p onclick="remove1()" >Remove</p>
             </li>
 
 
@@ -79,7 +76,7 @@
                     <button class="plus" onclick="plus2()">+</button><br>
                 </div>
 
-                <p id="remove2">Remove</p>
+                <p onclick="remove2()">Remove</p>
             </li>
 
             <li class="cartProducts" id="cartProducts3">
@@ -91,7 +88,7 @@
                     <button class="plus" onclick="plus3()">+</button><br>
                 </div>
 
-                <p id="remove3">Remove</p>
+                <p onclick="remove3()">Remove</p>
             </li>
 
             <li class="cartProducts" id="cartProducts4">
@@ -103,7 +100,7 @@
                     <button class="plus" onclick="plus4()">+</button><br>
                 </div>
 
-                <p id="remove4">Remove</p>
+                <p onclick="remove4()">Remove</p>
             </li>
 
             <li class="cartProducts" id="cartProducts5">
@@ -115,7 +112,7 @@
                     <button class="plus" onclick="plus5()">+</button><br>
                 </div>
 
-                <p id="remove5">Remove</p>
+                <p onclick="remove5()">Remove</p>
             </li>
 
             <li class="cartProducts" id="cartProducts6">
@@ -127,7 +124,7 @@
                     <button class="plus" onclick="plus6()">+</button><br>
                 </div>
 
-                <p id="remove6">Remove</p>
+                <p onclick="remove6()">Remove</p>
             </li>
 
 
