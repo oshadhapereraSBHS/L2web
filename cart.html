@@ -55,10 +55,16 @@ window.onload = function () {
             document.getElementById("quantity5").value = localStorage.getItem("quantity5");
             document.getElementById("quantity6").value = localStorage.getItem("quantity6");
 
+            if(localStorage.getItem("quantity1") + localStorage.getItem("quantity2") + localStorage.getItem("quantity3") + localStorage.getItem("quantity4") + localStorage.getItem("quantity5") + localStorage.getItem("quantity6") == 0){
+
+            }
+
+
         }
 
 function remove1(){
     document.getElementById("cartProducts1").style.display = "none";
+    localStorage.setItem("quantity1", 0)
 
 }
 
@@ -87,7 +93,7 @@ function remove6(){
 
 function minus1() {
 
-if (localStorage.getItem("quantity1").value > 0) {
+if (localStorage.getItem("quantity1") > 0) {
     document.getElementById("quantity1").stepDown();
     localStorage.setItem("quantity1",document.getElementById("quantity1").value)
 }
@@ -101,7 +107,7 @@ localStorage.setItem("quantity1",document.getElementById("quantity1").value)
 
 
 function minus2() {
-if (document.getElementById("quantity2").value > 0) {
+if (document.getElementById("quantity2") > 0) {
     document.getElementById("quantity2").stepDown();
 
 }
@@ -115,7 +121,7 @@ document.getElementById("quantity2").stepUp();
 
 
 function minus3() {
-if (document.getElementById("quantity3").value > 0) {
+if (document.getElementById("quantity3") > 0) {
     document.getElementById("quantity3").stepDown();
 
 }
@@ -129,7 +135,7 @@ document.getElementById("quantity3").stepUp();
 }
 
 function minus4() {
-if (document.getElementById("quantity4").value > 0) {
+if (document.getElementById("quantity4") > 0) {
 
     document.getElementById("quantity4").stepDown();
 
@@ -143,7 +149,7 @@ document.getElementById("quantity5").stepUp();
 }
 
 function minus5() {
-if (document.getElementById("quantity5").value > 0) {
+if (document.getElementById("quantity5") > 0) {
     document.getElementById("quantity5").stepDown();
 
 }
@@ -157,7 +163,7 @@ document.getElementById("quantity5").stepUp();
 }
 
 function minus6() {
-if (document.getElementById("quantity6").value > 0) {
+if (document.getElementById("quantity6") > 0) {
     document.getElementById("quantity6").stepDown();
 
 }
@@ -187,7 +193,7 @@ document.getElementById("quantity6").stepUp();
                 <img class="navLink" src="/images/cart.png">
             </a>
         </nav>
-
+<p>hi</p>
 
         <ul class="cart">
             <li class="cartProducts" id="cartProducts1">
