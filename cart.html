@@ -8,15 +8,7 @@
 <body>
 
     <script>
-
-
-
-
-window.onload = function () {
-
-
-    
-
+        window.onload = function () {
 
 
 
@@ -55,129 +47,157 @@ window.onload = function () {
             document.getElementById("quantity5").value = localStorage.getItem("quantity5");
             document.getElementById("quantity6").value = localStorage.getItem("quantity6");
 
-            if(localStorage.getItem("quantity1") + localStorage.getItem("quantity2") + localStorage.getItem("quantity3") + localStorage.getItem("quantity4") + localStorage.getItem("quantity5") + localStorage.getItem("quantity6") == 0){
-                document.getElementById("empty").innerHTML = "Your cart is empty."
+            if (localStorage.getItem("quantity1") + localStorage.getItem("quantity2") + localStorage.getItem(
+                    "quantity3") + localStorage.getItem("quantity4") + localStorage.getItem("quantity5") +
+                localStorage.getItem("quantity6") == 0) {
+                document.getElementById("empty").innerHTML = "Your cart is empty.";
+                document.getElementById("checkoutButton").style.display = "none";
+            } else {
+                document.getElementById("empty").style.display = "none";
+                document.getElementById("checkoutButton").style.display = "block";
+
             }
 
 
         }
 
-function remove1(){
-    document.getElementById("cartProducts1").style.display = "none";
-    localStorage.setItem("quantity1", 0)
+        function remove1() {
+            document.getElementById("cartProducts1").style.display = "none";
+            localStorage.setItem("quantity1", 0)
 
-}
+        }
 
-function remove2(){
-    document.getElementById("cartProducts2").style.display = "none";
+        function remove2() {
+            document.getElementById("cartProducts2").style.display = "none";
+            localStorage.setItem("quantity1", 0)
 
-}
-function remove3(){
-    document.getElementById("cartProducts3").style.display = "none";
+        }
 
-}
-function remove4(){
-    document.getElementById("cartProducts4").style.display = "none";
+        function remove3() {
+            document.getElementById("cartProducts3").style.display = "none";
+            localStorage.setItem("quantity1", 0)
 
-}
-function remove5(){
-    document.getElementById("cartProducts5").style.display = "none";
+        }
 
-}
-function remove6(){
-    document.getElementById("cartProducts6").style.display = "none";
+        function remove4() {
+            document.getElementById("cartProducts4").style.display = "none";
+            localStorage.setItem("quantity1", 0)
 
-}
+        }
 
+        function remove5() {
+            document.getElementById("cartProducts5").style.display = "none";
+            localStorage.setItem("quantity1", 0)
 
+        }
 
-function minus1() {
+        function remove6() {
+            document.getElementById("cartProducts6").style.display = "none";
+            localStorage.setItem("quantity1", 0)
 
-if (localStorage.getItem("quantity1") > 0) {
-    document.getElementById("quantity1").stepDown();
-    localStorage.setItem("quantity1",document.getElementById("quantity1").value)
-}
-}
-
-function plus1() {
-document.getElementById("quantity1").stepUp();
-localStorage.setItem("quantity1",document.getElementById("quantity1").value)
-
-}
-
-
-function minus2() {
-if (document.getElementById("quantity2") > 0) {
-    document.getElementById("quantity2").stepDown();
-
-}
-
-}
-
-function plus2() {
-document.getElementById("quantity2").stepUp();
-
-}
-
-
-function minus3() {
-if (document.getElementById("quantity3") > 0) {
-    document.getElementById("quantity3").stepDown();
-
-}
-
-}
-
-function plus3() {
-
-document.getElementById("quantity3").stepUp();
-
-}
-
-function minus4() {
-if (document.getElementById("quantity4") > 0) {
-
-    document.getElementById("quantity4").stepDown();
-
-}
-}
-
-function plus4() {
-document.getElementById("quantity5").stepUp();
-
-
-}
-
-function minus5() {
-if (document.getElementById("quantity5") > 0) {
-    document.getElementById("quantity5").stepDown();
-
-}
-
-}
-
-function plus5() {
-
-document.getElementById("quantity5").stepUp();
-
-}
-
-function minus6() {
-if (document.getElementById("quantity6") > 0) {
-    document.getElementById("quantity6").stepDown();
-
-}
-
-}
-
-function plus6() {
-document.getElementById("quantity6").stepUp();
-
-
-}
+        }
 
 
 
+        function minus1() {
+
+            if (localStorage.getItem("quantity1") > 0) {
+                document.getElementById("quantity1").stepDown();
+                localStorage.setItem("quantity1", document.getElementById("quantity1").value);
+
+            }
+        }
+
+        function plus1() {
+            document.getElementById("quantity1").stepUp();
+            localStorage.setItem("quantity1", document.getElementById("quantity1").value)
+
+        }
+
+
+        function minus2() {
+            if (document.getElementById("quantity2") > 0) {
+                document.getElementById("quantity2").stepDown();
+                localStorage.setItem("quantity2", document.getElementById("quantity2").value)
+
+            }
+
+        }
+
+        function plus2() {
+            document.getElementById("quantity2").stepUp();
+            localStorage.setItem("quantity2", document.getElementById("quantity2").value)
+
+        }
+
+
+        function minus3() {
+            if (document.getElementById("quantity3") > 0) {
+                document.getElementById("quantity3").stepDown();
+                localStorage.setItem("quantity3", document.getElementById("quantity3").value)
+
+            }
+
+        }
+
+        function plus3() {
+
+            document.getElementById("quantity3").stepUp();
+            localStorage.setItem("quantity3", document.getElementById("quantity3").value)
+
+        }
+
+        function minus4() {
+            if (document.getElementById("quantity4") > 0) {
+
+                document.getElementById("quantity4").stepDown();
+                localStorage.setItem("quantity4", document.getElementById("quantity4").value)
+
+            }
+        }
+
+        function plus4() {
+            document.getElementById("quantity4").stepUp();
+
+            localStorage.setItem("quantity4", document.getElementById("quantity4").value)
+
+        }
+
+        function minus5() {
+            if (document.getElementById("quantity5") > 0) {
+                document.getElementById("quantity5").stepDown();
+                localStorage.setItem("quantity5", document.getElementById("quantity5").value)
+
+            }
+
+        }
+
+        function plus5() {
+
+            document.getElementById("quantity5").stepUp();
+            localStorage.setItem("quantity5", document.getElementById("quantity5").value)
+
+        }
+
+        function minus6() {
+            if (document.getElementById("quantity6") > 0) {
+                document.getElementById("quantity6").stepDown();
+                localStorage.setItem("quantity6", document.getElementById("quantity6").value)
+
+            }
+
+        }
+
+        function plus6() {
+            document.getElementById("quantity6").stepUp();
+            localStorage.setItem("quantity6", document.getElementById("quantity6").value)
+
+
+        }
+
+        function checkout() {
+            location.href = "checkout.html"
+        }
     </script>
 
     <section class="cartHome">
@@ -196,7 +216,6 @@ document.getElementById("quantity6").stepUp();
 
 
         <ul class="cart">
-            <p id="empty">hi</p>
             <li class="cartProducts" id="cartProducts1">
                 <img class="ImgL" src="images/blue tshirt.png">
 
@@ -206,7 +225,7 @@ document.getElementById("quantity6").stepUp();
                     <button class="plus" onclick="plus1()">+</button><br>
                 </div>
 
-                <p onclick="remove1()" >Remove</p>
+                <p onclick="remove1()">Remove</p>
             </li>
 
 
@@ -269,6 +288,9 @@ document.getElementById("quantity6").stepUp();
 
                 <p onclick="remove6()">Remove</p>
             </li>
+            <p id="empty"></p>
+
+            <button id="checkoutButton" onclick="checkout()">Proceed to checkout</button>
 
 
 
