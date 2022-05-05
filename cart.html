@@ -56,7 +56,7 @@ window.onload = function () {
             document.getElementById("quantity6").value = localStorage.getItem("quantity6");
 
             if(localStorage.getItem("quantity1") + localStorage.getItem("quantity2") + localStorage.getItem("quantity3") + localStorage.getItem("quantity4") + localStorage.getItem("quantity5") + localStorage.getItem("quantity6") == 0){
-
+                document.getElementById("empty").innerHTML = "Your cart is empty."
             }
 
 
@@ -193,9 +193,10 @@ document.getElementById("quantity6").stepUp();
                 <img class="navLink" src="/images/cart.png">
             </a>
         </nav>
-<p>hi</p>
+
 
         <ul class="cart">
+            <p id="empty">hi</p>
             <li class="cartProducts" id="cartProducts1">
                 <img class="ImgL" src="images/blue tshirt.png">
 
