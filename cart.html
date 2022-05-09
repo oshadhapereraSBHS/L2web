@@ -47,6 +47,15 @@
             document.getElementById("quantity5").value = localStorage.getItem("quantity5");
             document.getElementById("quantity6").value = localStorage.getItem("quantity6");
 
+
+            document.getElementById("total1").innerHTML = '$' + localStorage.getItem("quantity1") * 10.99;
+            document.getElementById("total2").innerHTML = '$' + localStorage.getItem("quantity2") * 11.99;
+            document.getElementById("total3").innerHTML = '$' + localStorage.getItem("quantity3") * 8.99;
+            document.getElementById("total4").innerHTML = '$' + localStorage.getItem("quantity4") * 10.99;
+            document.getElementById("total5").innerHTML = '$' + localStorage.getItem("quantity5") * 11.99;
+            document.getElementById("total6").innerHTML = '$' + localStorage.getItem("quantity6") * 8.99;
+
+
             if (localStorage.getItem("quantity1") + localStorage.getItem("quantity2") + localStorage.getItem(
                     "quantity3") + localStorage.getItem("quantity4") + localStorage.getItem("quantity5") +
                 localStorage.getItem("quantity6") == 0) {
@@ -217,7 +226,7 @@
 
         <ul class="cart">
             <li class="cartProducts" id="cartProducts1">
-                <img class="ImgL" src="images/blue tshirt.png">
+                <img src="images/blue tshirt.png">
 
                 <div id="change1">
                     <button class="minus" onclick="minus1()">-</button>
@@ -226,6 +235,7 @@
                 </div>
 
                 <p onclick="remove1()">Remove</p>
+                <p id="total1"></p>
             </li>
 
 
@@ -239,6 +249,7 @@
                 </div>
 
                 <p onclick="remove2()">Remove</p>
+                <p id="total2"></p>
             </li>
 
             <li class="cartProducts" id="cartProducts3">
@@ -251,6 +262,7 @@
                 </div>
 
                 <p onclick="remove3()">Remove</p>
+                <p id="total3"></p>
             </li>
 
             <li class="cartProducts" id="cartProducts4">
@@ -263,6 +275,7 @@
                 </div>
 
                 <p onclick="remove4()">Remove</p>
+                <p id="total4"></p>
             </li>
 
             <li class="cartProducts" id="cartProducts5">
@@ -275,6 +288,7 @@
                 </div>
 
                 <p onclick="remove5()">Remove</p>
+                <p id="total5"></p>
             </li>
 
             <li class="cartProducts" id="cartProducts6">
@@ -287,6 +301,7 @@
                 </div>
 
                 <p onclick="remove6()">Remove</p>
+                <p id="total6"></p>
             </li>
             <p id="empty"></p>
 
