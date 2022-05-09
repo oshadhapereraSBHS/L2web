@@ -39,47 +39,35 @@
 
             <th colspan="2">Chest Size</th>
           <tr>
-            <th>cm</th>
-            <th>inch</th>
-          <tr>
-            <!--size-->
-            <td>XXXS</td>
-            <!--centimetres-->
-            <td>76-81</td>
-            <!--inches-->
-            <td>30-32</td>
-          <tr>
-            <td>XXS</td>
-            <td>82-86</td>
-            <td>33-34</td>
+            <th>width (cm)</th>
+            <th>length (cm)</th>
           <tr>
             <td>XS</td>
-            <td>87-91</td>
-            <td>35-36</td>
+
+            <td>44.5</td>
+
+            <td>62</td>
           <tr>
             <td>S</td>
-            <td>92-96</td>
-            <td>37-38</td>
+            <td>48</td>
+            <td>65</td>
           <tr>
             <td>M</td>
-            <td>97-101</td>
-            <td>39-40</td>
+            <td>51</td>
+            <td>68</td>
           <tr>
             <td>L</td>
-            <td>102-106</td>
-            <td>4142</td>
+            <td>54.5</td>
+            <td>71</td>
           <tr>
             <td>XL</td>
-            <td>107-111</td>
-            <td>43-44</td>
+            <td>58</td>
+            <td>74</td>
           <tr>
             <td>XXL</td>
-            <td>112-116</td>
-            <td>45-46</td>
-          <tr>
-            <td>XXXL</td>
-            <td>117-121</td>
-            <td>47-48</td>
+            <td>61.5</td>
+            <td>77</td>
+
 
 
 
@@ -92,7 +80,29 @@
 
       <div class="calc">
 
+        <h2 id="testing">Enter your preferred width or length</h2>
 
+        <input id="info" type="number">
+        <p>
+          cm
+        </p>
+
+
+
+
+
+
+                <select id="option">
+                    <option value="1">width</option>
+                    <option value="2">length</option>
+                </select>
+
+
+
+        <button onclick="check()">Check</button>
+
+
+        <h3 id="shirtsize"></h3>
       </div>
       <div class="contactBackground"></div>
 
