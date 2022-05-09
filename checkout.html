@@ -8,11 +8,19 @@
 <body>
 
     <script>
-        function contact() {
-            document.getElementById("form1").style.display = "none";
-            document.getElementById("form2").style.display = "none";
-            document.getElementById("form3").innerHTML = "Thanks for your message. We will reply as soon as possible."
-        }
+        function checkoutOverlay(event) {
+            event.preventDefault();
+            localStorage.setItem("quantity1", 0)
+            localStorage.setItem("quantity2", 0)
+            localStorage.setItem("quantity3", 0)
+            localStorage.setItem("quantity4", 0)
+            localStorage.setItem("quantity5", 0)
+            localStorage.setItem("quantity6", 0)
+            
+
+            document.getElementById("form4").innerHTML = "Thank you for shopping with us.";
+            document.getElementById("form5").style.display = "none";
+        } 
     </script>
 
     <section class="home">
@@ -35,66 +43,66 @@
 
 
 
-                <div class="col1">
+            <div class="col1">
 
-                    <form>
+                <form id="form4">
+<h3>Billing Details</h3><br><br>
 
+                    <label>First Name</label><br>
+                    <input type="text"><br><br>
 
-                        <label>First Name</label><br>
-                        <input type="text"><br><br>
+                    <label>Last Name</label><br>
+                    <input type="text"><br><br>
 
-                        <label>Last Name</label><br>
-                        <input type="text"><br><br>
+                    <label>Phone number</label><br>
+                    <input type="number"><br><br>
 
-                        <label>Phone number</label><br>
-                        <input type="number"><br><br>
+                    <label>Email</label><br>
+                    <input type="text"><br><br>
 
-                        <label>Email</label><br>
-                        <input type="text"><br><br>
+                    <label>Street Address</label><br>
+                    <input type="text"><br><br>
 
-                        <label>Street Address</label><br>
-                        <input type="text"><br><br>
+                    <label>City</label><br>
+                    <input type="text"><br><br>
 
-                        <label>City</label><br>
-                        <input type="text"><br><br>
+                    <label>Post Code</label><br>
+                    <input type="text"><br><br>
 
-                        <label>Post Code</label><br>
-                        <input type="text"><br><br>
-
-                        <input type="checkbox" checked="checked"> Shipping address same as billing
-
-
-                    </form>
-
-                </div>
-
-                <div class="col2">
-
-                    <form>
+                    <input type="checkbox" checked="checked"> Shipping address same as billing
 
 
-                        <label>Credit Card Number</label><br>
-                        <input type="text"><br><br>
+                </form>
 
-                        <label>Expiry Date</label><br>
-                        <input type="text"><br><br>
+            </div>
 
-                        <label>CVV</label><br>
-                        <input type="number"><br><br>
+            <div class="col2">
 
-                        <label>Total</label><br>
-                        <input type="text"><br><br>
+                <form id="form5">
 
-                        <label>Promo Code</label><br>
-                        <input type="text"><br><br>
+<h3>Payment Details</h3><br><br>
+                    <label>Credit Card Number</label><br>
+                    <input type="text"><br><br>
 
-                        <button onclick="checkoutOverlay()">Submit</button>
+                    <label>Expiry Date</label><br>
+                    <input type="text"><br><br>
+
+                    <label>CVV</label><br>
+                    <input type="number"><br><br>
+
+                    <label>Total</label><br>
+                    <input type="text"><br><br>
+
+                    <label>Promo Code</label><br>
+                    <input type="text"><br><br>
+
+                    <button id="confirmButton" onclick="checkoutOverlay(event)">Confirm</button>
 
 
 
-                    </form>
+                </form>
 
-                </div>
+            </div>
 
 
 
