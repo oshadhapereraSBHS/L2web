@@ -9,6 +9,55 @@
 
   <script>
 
+    function check() {
+      var value = document.getElementById("info").value;
+      var option = document.getElementById("option").value;
+      if (40 <= value && (value < 44.5 && option == 1)) {
+        document.getElementById("shirtsize").innerHTML = "Your size is XS";
+      } else if (44.5 <= value && (value < 48 && option == 1)) {
+        document.getElementById("shirtsize").innerHTML = "Your size is S";
+      } else if (48 <= value&& (value < 51 && option == 1)) {
+        document.getElementById("shirtsize").innerHTML = "Your size is M";
+
+      } else if (51 <= value&& (value < 54.5 && option == 1)) {
+        document.getElementById("shirtsize").innerHTML = "Your size is L";
+
+      } else if (54.5 <= value&& (value < 58 && option == 1)) {
+        document.getElementById("shirtsize").innerHTML = "Your size is XL";
+
+      } else if (58 <= value&& (value < 61.5 && option == 1)) {
+        document.getElementById("shirtsize").innerHTML = "Your size is XXL";
+
+      } else if (61.5 <= value&& (value < 65 && option == 1)) {
+        document.getElementById("shirtsize").innerHTML = "Your size is XXL";
+      } else if (59 <= value&& (value < 62 && option == 2)) {
+        document.getElementById("shirtsize").innerHTML = "Your size is XS";
+      } else if (62 <= value&& (value < 65 && option == 2)) {
+        document.getElementById("shirtsize").innerHTML = "Your size is S";
+      } else if (65 <= value&& (value < 68 && option == 2)) {
+        document.getElementById("shirtsize").innerHTML = "Your size is M";
+
+      } else if (68 <= value&& (value < 71 && option == 2)) {
+        document.getElementById("shirtsize").innerHTML = "Your size is L";
+
+      } else if (71 <= value&& (value < 74 && option == 2)) {
+        document.getElementById("shirtsize").innerHTML = "Your size is XL";
+
+      } else if (74 <= value&& (value < 77 && option == 2)) {
+        document.getElementById("shirtsize").innerHTML = "Your size is XXL";
+
+      } else if (77 <= value&& (value < 80 && option == 2)) {
+
+        document.getElementById("shirtsize").innerHTML = "Your size is XXL";
+      } 
+
+    else {
+        document.getElementById("shirtsize").innerHTML = "There are no tshirts for your size"
+
+      }
+
+
+    }
   </script>
 
   <section class="home">
@@ -79,21 +128,21 @@
 
 
       <div class="calc">
-<br>
+        <br>
         <h4 id="testing">Enter your preferred width or length</h4>
-<br>
+        <br>
         <input id="info" type="number"> cm
-<br><br>
-                <select id="option">
-                    <option value="1">width</option>
-                    <option value="2">length</option>
-                </select>
+        <br><br>
+        <select id="option">
+          <option value="1">width</option>
+          <option value="2">length</option>
+        </select>
 
-<br><br>
+        <br><br>
 
         <button onclick="check()">Check</button>
 
-
+        <br><br>
         <h3 id="shirtsize"></h3>
       </div>
       <div class="contactBackground"></div>
