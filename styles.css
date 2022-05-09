@@ -70,7 +70,7 @@ nav img {
     display: grid;
     grid-template-columns: 5% 1fr 1fr 5%;
     grid-template-rows: auto;
-    background-image: url('../images/sliderimg2.png');
+    background-image: url('..images/sliderimg2.png');
     padding: 2%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -195,7 +195,7 @@ a:hover {
 
 
 body {
-    background-image: url(../images/background.png);
+    background-image: url(images/background.png);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -612,4 +612,33 @@ form input {
 
 .table {
   grid-column: 2/3;
+  grid-row: 1/2;
 }
+
+.calc {
+  grid-row: 1/2;
+  grid-column: 4/5;
+}
+
+table, th, td {
+  border: 1px solid black;
+border-collapse: collapse;
+
+}
+
+table {
+  margin-top: 4%;
+  margin-left: 4%;
+}
+
+td {
+  min-width: 80px
+}
+
+th, td {
+  padding: 2% 2% 2% 2%;
+
+  text-align: center;
+}
+
+ tr:nth-child(even){background-color: lightGray ;}
