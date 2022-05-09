@@ -55,12 +55,21 @@
             document.getElementById("total5").innerHTML = '$' + localStorage.getItem("quantity5") * 11.99;
             document.getElementById("total6").innerHTML = '$' + localStorage.getItem("quantity6") * 8.99;
 
+            document.getElementById("totalPrice").innerHTML = '$' + (localStorage.getItem("quantity1") * 10.99 +
+                localStorage.getItem("quantity2") * 11.99 + localStorage.getItem("quantity3") * 8.99 +
+                localStorage
+                .getItem("quantity4") * 10.99 + localStorage.getItem("quantity5") * 11.99 + localStorage
+                .getItem("quantity6") * 8.99);
+            
+
 
             if (localStorage.getItem("quantity1") + localStorage.getItem("quantity2") + localStorage.getItem(
                     "quantity3") + localStorage.getItem("quantity4") + localStorage.getItem("quantity5") +
                 localStorage.getItem("quantity6") == 0) {
                 document.getElementById("empty").innerHTML = "Your cart is empty.";
                 document.getElementById("checkoutButton").style.display = "none";
+                document.getElementById("price").style.display = "none";
+
             } else {
                 document.getElementById("empty").style.display = "none";
                 document.getElementById("checkoutButton").style.display = "block";
@@ -303,6 +312,17 @@
                 <p onclick="remove6()">Remove</p>
                 <p id="total6"></p>
             </li>
+
+            <li class="price" id="price">
+
+                <div id="totalText">
+                    <p>Total</p>
+                </div>
+                <div id="totalPrice"></div>
+
+
+            </li>
+
             <p id="empty"></p>
 
             <button id="checkoutButton" onclick="checkout()">Proceed to checkout</button>

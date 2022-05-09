@@ -478,14 +478,22 @@ input {
 
 .cartProducts {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 5px 5px 5px grey;
 
     margin-bottom: 1%;
 }
-
+.price {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 5px grey;
+padding: 1% 1% 1% 1%;
+    margin-bottom: 1%;
+}
 .cart {
     grid-column: 2/3;
 }
@@ -557,4 +565,20 @@ input {
 .col2 {
     grid-column: 3/4;
     justify-self: center;
+}
+#totalPrice {
+    grid-column: 4/5;
+    text-align: center;
+    vertical-align: middle;
+    align-self: center;
+}
+
+#totalText p {
+    text-align: center;
+    vertical-align: middle;
+    align-self: center;
+}
+
+form input {
+    text-align: left;
 }

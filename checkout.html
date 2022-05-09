@@ -16,11 +16,23 @@
             localStorage.setItem("quantity4", 0)
             localStorage.setItem("quantity5", 0)
             localStorage.setItem("quantity6", 0)
-            
+
 
             document.getElementById("form4").innerHTML = "Thank you for shopping with us.";
             document.getElementById("form5").style.display = "none";
-        } 
+        }
+
+        window.onload = function(){
+            document.getElementById("totalValue").value = '$' + (localStorage.getItem("quantity1") * 10.99 +
+                localStorage.getItem("quantity2") * 11.99 + localStorage.getItem("quantity3") * 8.99 +
+                localStorage
+                .getItem("quantity4") * 10.99 + localStorage.getItem("quantity5") * 11.99 + localStorage
+                .getItem("quantity6") * 8.99);
+            
+        }
+
+
+
     </script>
 
     <section class="home">
@@ -46,7 +58,7 @@
             <div class="col1">
 
                 <form id="form4">
-<h3>Billing Details</h3><br><br>
+                    <h3>Billing Details</h3><br><br>
 
                     <label>First Name</label><br>
                     <input type="text"><br><br>
@@ -80,7 +92,7 @@
 
                 <form id="form5">
 
-<h3>Payment Details</h3><br><br>
+                    <h3>Payment Details</h3><br><br>
                     <label>Credit Card Number</label><br>
                     <input type="text"><br><br>
 
@@ -91,7 +103,7 @@
                     <input type="number"><br><br>
 
                     <label>Total</label><br>
-                    <input type="text"><br><br>
+                    <input id="totalValue" type="text" readonly><br><br>
 
                     <label>Promo Code</label><br>
                     <input type="text"><br><br>
