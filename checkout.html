@@ -25,7 +25,7 @@
 
         }
 
-        window.onload = function(){
+        window.onload = function () {
             document.getElementById("totalValue").value = '$' + (localStorage.getItem("quantity1") * 10.99 +
                 localStorage.getItem("quantity2") * 11.99 + localStorage.getItem("quantity3") * 8.99 +
                 localStorage
@@ -34,16 +34,21 @@
 
         }
 
-
-
+        function homepage() {
+            location.href = "index.html"
+        }
     </script>
 
     <section class="home">
 
-        <div class="logo">
-            <img class="logoImg" src="images/logo.png">
-        </div>
         <nav>
+            <div class="logo" onclick="homepage()">
+
+
+                <img class="logoImg" src="images/logo.png">
+
+
+            </div>
             <a class="navLink" href="index.html">Home</a>
             <a class="navLink" href="products.html">Products</a>
             <a class="navLink" href="size.html">Sizes</a>
@@ -120,9 +125,9 @@
                 </form>
 
             </div>
-            <div id= "checkoutBackground" class="checkoutBackground"></div>
+            <div id="checkoutBackground" class="checkoutBackground"></div>
 
-</div>
+        </div>
 
 
     </section>

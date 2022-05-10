@@ -161,14 +161,23 @@
         function updateQuantity6() {
             localStorage.setItem("quantity6", document.getElementById("quantity6").value)
         }
+
+        function homepage() {
+            location.href = "index.html"
+        }
     </script>
 
     <section class="home">
 
-        <div class="logo">
-            <img class="logoImg" src="images/logo.png">
-        </div>
+
         <nav>
+            <div class="logo" onclick="homepage()">
+
+
+                <img class="logoImg" src="images/logo.png">
+
+
+            </div>
             <a class="navLink" href="index.html">Home</a>
             <a class="navLink" href="products.html">Products</a>
             <a class="navLink" href="size.html">Sizes</a>
@@ -177,7 +186,6 @@
             <a class="navLink" href="cart.html">
                 <img class="navLink" src="images/cart.png">
             </a>
-
         </nav>
 
         <ul class="products">

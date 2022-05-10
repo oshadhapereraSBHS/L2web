@@ -17,16 +17,16 @@
 }
 
 nav {
+    margin: 1% 0 0 0;
     grid-column: 2/3;
     grid-row: 1/2;
-    min-width: 25%;
     align-self: center;
     justify-self: stretch;
     display: inline-block;
     justify-content: end;
     justify-items: end;
     display: grid;
-    grid-template-columns: 12% 12% 12% 12% 10%;
+    grid-template-columns: 1fr 12% 12% 12% 12% 10%;
 }
 
 nav img {
@@ -37,17 +37,23 @@ nav img {
 
 }
 
-
-.logo {
-    grid-column: 2/3;
-    grid-row: 1/2;
+nav a {
+    align-self: center;
 
 }
 
+
+.logo {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-self: left;
+}
+
 .logoImg {
-    width: 15%;
+    width: 100%;
     padding-top: 2%;
     padding-bottom: 1%;
+
 }
 
 
@@ -70,7 +76,7 @@ nav img {
     display: grid;
     grid-template-columns: 5% 1fr 1fr 5%;
     grid-template-rows: auto;
-    background-image: url('..images/sliderimg2.png');
+    background-image: url('images/sliderimg2.png');
     padding: 2%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -198,6 +204,7 @@ body {
     background-image: url(images/background.png);
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
 
 }
 
@@ -270,7 +277,8 @@ body {
 
 }
 
-.contact, .size {
+.contact,
+.size {
     grid-row: 2/3;
     grid-column: 1/4;
     display: grid;
@@ -313,7 +321,7 @@ iframe {
 }
 
 .checkoutBackground {
-    grid-row:1/2;
+    grid-row: 1/2;
     grid-column: 2/4;
     background-color: rgb(255, 255, 255, 0.6);
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -332,6 +340,7 @@ iframe {
     width: 100%;
     height: 100%;
 }
+
 #yourMessage {
     min-height: 100px;
 }
@@ -495,16 +504,19 @@ input {
 
     margin-bottom: 1%;
 }
+
 .price {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 5px 5px 5px grey;
-padding: 1% 1% 1% 1%;
+    padding: 1% 1% 1% 1%;
     margin-bottom: 1%;
 }
+
 .cart {
+    margin-top: 2%;
     grid-column: 2/3;
 }
 
@@ -576,9 +588,10 @@ padding: 1% 1% 1% 1%;
 .col2 {
     grid-column: 3/4;
     grid-row: 1/2;
-padding: 1% 1% 1% 1%;
+    padding: 1% 1% 1% 1%;
     justify-self: center;
 }
+
 #totalPrice {
     grid-column: 4/5;
     text-align: center;
@@ -611,34 +624,47 @@ form input {
 }
 
 .table {
-  grid-column: 2/3;
-  grid-row: 1/2;
+    grid-column: 2/3;
+    grid-row: 2/3;
 }
 
 .calc {
-  grid-row: 1/2;
-  grid-column: 4/5;
+    grid-row: 2/3;
+    grid-column: 4/5;
 }
 
-table, th, td {
-  border: 1px solid black;
-border-collapse: collapse;
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
 
 }
 
 table {
-  margin-top: 4%;
-  margin-left: 4%;
+    margin-top: 4%;
+    margin-left: 4%;
+    margin-bottom: 4%;
+
 }
 
 td {
-  min-width: 80px
+    min-width: 80px
 }
 
-th, td {
-  padding: 2% 2% 2% 2%;
+th,
+td {
+    padding: 2% 2% 2% 2%;
 
-  text-align: center;
+    text-align: center;
 }
 
- tr:nth-child(even){background-color: lightGray ;}
+tr:nth-child(even) {
+    background-color: lightGray;
+}
+
+.sizeHeading {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    margin-top: 20px;
+}
