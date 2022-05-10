@@ -20,6 +20,9 @@
 
             document.getElementById("form4").innerHTML = "Thank you for shopping with us.";
             document.getElementById("form5").style.display = "none";
+
+            document.getElementById("checkoutBackground").style.display = "none";
+
         }
 
         window.onload = function(){
@@ -28,7 +31,7 @@
                 localStorage
                 .getItem("quantity4") * 10.99 + localStorage.getItem("quantity5") * 11.99 + localStorage
                 .getItem("quantity6") * 8.99);
-            
+
         }
 
 
@@ -43,9 +46,11 @@
         <nav>
             <a class="navLink" href="index.html">Home</a>
             <a class="navLink" href="products.html">Products</a>
+            <a class="navLink" href="size.html">Sizes</a>
+
             <a class="navLink" href="contact.html">Contact</a>
             <a class="navLink" href="cart.html">
-                <img class="navLink" src="/images/cart.png">
+                <img class="navLink" src="images/cart.png">
             </a>
         </nav>
 
@@ -115,8 +120,9 @@
                 </form>
 
             </div>
+            <div id= "checkoutBackground" class="checkoutBackground"></div>
 
-
+</div>
 
 
     </section>
