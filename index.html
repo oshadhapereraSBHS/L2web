@@ -23,8 +23,8 @@
                 document.getElementById("sliderImg2").style.width = "300px"
                 document.getElementById("sliderImg2").style.width = "300px"
                 document.getElementById("sliderText").innerHTML = document.getElementById("hiddenSliderText").innerHTML
-                document.getElementById("slider").style.backgroundImage = "url('images/sliderimg6.png')"
-                document.getElementById("slider").style.backgroundImage = "url('images/sliderimg6.png')"
+                document.getElementById("slider").style.backgroundImage = "url('images/sliderimg8.png')"
+                document.getElementById("slider").style.backgroundImage = "url('images/sliderimg8.png')"
             } else {
 
                 document.getElementById("sliderImg1").src = "images/background2.png";
@@ -48,6 +48,60 @@
         function homepage() {
             location.href = "index.html"
         }
+
+        setInterval(changeFontSize, 200);
+
+        function changeFontSize() {
+            if (window.innerWidth < 1280 && window.innerWidth >= 908) {
+                document.getElementById("descriptionTextBox").style.fontSize = "20px"
+                document.getElementById("sliderText").style.fontSize = "20px"
+                document.getElementById("hiddenSliderText").style.fontSize = "20px"
+                document.getElementById("originalSliderText").style.fontSize = "20px"
+                document.getElementById("mensLink").style.fontSize = "20px"
+                document.getElementById("womensLink").style.fontSize = "20px"
+
+                document.getElementById("nav1").style.fontSize = "20px"
+                document.getElementById("nav2").style.fontSize = "20px"
+                document.getElementById("nav3").style.fontSize = "20px"
+                document.getElementById("nav4").style.fontSize = "20px"
+                document.getElementById("nav5").style.fontSize = "20px"
+            } else if (window.innerWidth < 908) {
+                document.getElementById("descriptionTextBox").style.fontSize = "16px"
+                document.getElementById("sliderText").style.fontSize = "16px"
+                document.getElementById("hiddenSliderText").style.fontSize = "16px"
+                document.getElementById("originalSliderText").style.fontSize = "16px"
+                document.getElementById("mensLink").style.fontSize = "16px"
+                document.getElementById("womensLink").style.fontSize = "16px"
+
+                document.getElementById("nav1").style.fontSize = "16px"
+                document.getElementById("nav2").style.fontSize = "16px"
+                document.getElementById("nav3").style.fontSize = "16px"
+                document.getElementById("nav4").style.fontSize = "16px"
+                document.getElementById("nav5").style.fontSize = "16px"
+
+
+
+
+
+            } else {
+                document.getElementById("descriptionTextBox").style.fontSize = "25px"
+                document.getElementById("sliderText").style.fontSize = "25px"
+                document.getElementById("hiddenSliderText").style.fontSize = "25px"
+                document.getElementById("originalSliderText").style.fontSize = "25px"
+                document.getElementById("mensLink").style.fontSize = "25px"
+                document.getElementById("womensLink").style.fontSize = "25px"
+
+                document.getElementById("nav1").style.fontSize = "23px"
+                document.getElementById("nav2").style.fontSize = "23px"
+                document.getElementById("nav3").style.fontSize = "23px"
+                document.getElementById("nav4").style.fontSize = "23px"
+                document.getElementById("nav5").style.fontSize = "23px"
+            }
+
+
+
+
+        }
     </script>
 
     <section class="home">
@@ -61,12 +115,12 @@
 
 
             </div>
-            <a class="navLink" href="index.html">Home</a>
-            <a class="navLink" href="products.html">Products</a>
-            <a class="navLink" href="size.html">Sizes</a>
+            <a id="nav1" class="navLink" href="index.html">Home</a>
+            <a id="nav2" class="navLink" href="products.html">Products</a>
+            <a id="nav3" class="navLink" href="size.html">Sizes</a>
 
-            <a class="navLink" href="contact.html">Contact</a>
-            <a class="navLink" href="cart.html">
+            <a id="nav4" class="navLink" href="contact.html">Contact</a>
+            <a id="nav5" class="navLink" href="cart.html">
                 <img class="navLink" src="images/cart.png">
             </a>
         </nav>
@@ -141,15 +195,15 @@
 
             </div>
             <div class="mens">
-                <a href="products.html">mens</a>
+                <a id="mensLink" href="products.html">mens</a>
             </div>
             <div class="descriptionText">
-                <p>Shop at Myshirt<br><br>to get the latest<br><br>styles at an<br><br>affordable price.</p>
+                <p id="descriptionTextBox">Shop at Myshirt to get the latest styles at an affordable price.</p>
             </div>
 
 
             <div class="womens">
-                <a href="products.html">womens</a>
+                <a id="womensLink" href="products.html">womens</a>
             </div>
 
 

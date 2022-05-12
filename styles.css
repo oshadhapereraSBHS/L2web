@@ -14,6 +14,7 @@
     display: grid;
     grid-template-columns: 5% 1fr 5%;
     grid-template-rows: auto;
+    margin-bottom:3%;
 }
 
 nav {
@@ -23,8 +24,7 @@ nav {
     align-self: center;
     justify-self: stretch;
     display: inline-block;
-    justify-content: end;
-    justify-items: end;
+
     display: grid;
     grid-template-columns: 1fr 12% 12% 12% 12% 10%;
 }
@@ -39,6 +39,7 @@ nav img {
 
 nav a {
     align-self: center;
+    font-size: clamp(10px, 3em, 23px);
 
 }
 
@@ -58,16 +59,40 @@ nav a {
 
 
 .products img {
-    width: 300px;
-    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+    width: 20vw;
+    height: 20vw;
+    min-width: 150px;
+    min-height: 150px;
 
 }
 
+.descriptionText {
+    max-width: 300px;
+    max-height: 300px;
+    width: 20vw;
+    height: 20vw;
+    min-width: 150px;
+    min-height: 150px;
+    justify-content: center;
+}
+
+#descriptionTextBox {
+    text-align: center;
+    vertical-align: middle;
+    align-self: center;
+    padding-top: 3vw;
+line-height: 2em;
+}
 
 .sliderImg img {
-    width: 300px;
-    height: 300px;
-
+    max-width: 300px;
+    max-height: 300px;
+    min-width: 150px;
+    min-height: 150px;
+    width: 20vw;
+    height: 20vw;
 }
 
 .slider {
@@ -481,6 +506,10 @@ li {
     text-align: center;
 }
 
+.cartProducts input {
+    max-width: 100px;
+}
+
 input {
     text-align: center;
 }
@@ -667,4 +696,10 @@ tr:nth-child(even) {
     grid-column: 3/4;
     grid-row: 1/2;
     margin-top: 20px;
+}
+
+#product4,
+#product5,
+#product6 {
+    margin-bottom: 8%
 }
