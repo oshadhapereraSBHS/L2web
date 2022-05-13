@@ -224,7 +224,8 @@ a:hover {
     border-radius: 30px;
     color: white;
     border-color: #441a4b;
-    font-size: 24px;
+    font-size: clamp(10px, 1.3em, 20px);
+
     padding: 2%;
     box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5)
 }

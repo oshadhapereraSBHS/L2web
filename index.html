@@ -10,6 +10,13 @@
     <script>
         var sliderCount = 1;
 
+
+
+  setInterval(changeSlider, 3000)
+
+
+
+
         function changeSlider() {
             sliderCount++;
 
@@ -18,10 +25,7 @@
                 document.getElementById("sliderImg2").src = "images/yellow tshirt w.png";
                 document.getElementById("dot1img").src = "images/dot2.png";
                 document.getElementById("dot2img").src = "images/dot.png";
-                document.getElementById("sliderImg1").style.height = "300px"
-                document.getElementById("sliderImg1").style.height = "300px"
-                document.getElementById("sliderImg2").style.width = "300px"
-                document.getElementById("sliderImg2").style.width = "300px"
+
                 document.getElementById("sliderText").innerHTML = document.getElementById("hiddenSliderText").innerHTML
                 document.getElementById("slider").style.backgroundImage = "url('images/sliderimg8.png')"
                 document.getElementById("slider").style.backgroundImage = "url('images/sliderimg8.png')"
