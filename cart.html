@@ -1,376 +1,394 @@
 <!DOCTYPE html>
 
 <head>
-    <title>MyShirt</title>
-    <link rel="stylesheet" href="styles.css">
+  <title>MyShirt</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <script>
-        window.onload = function () {
+  <script>
+    window.onload = function() {
 
 
 
-            if (localStorage.getItem("quantity1") == 0) {
-                document.getElementById("cartProducts1").style.display = "none";
+      if (localStorage.getItem("quantity1") == 0) {
+        document.getElementById("cartProducts1").style.display = "none";
 
-            }
-            if (localStorage.getItem("quantity2") == 0) {
-                document.getElementById("cartProducts2").style.display = "none";
+      }
+      if (localStorage.getItem("quantity2") == 0 || ) {
+        document.getElementById("cartProducts2").style.display = "none";
 
-            }
+      }
 
-            if (localStorage.getItem("quantity3") == 0) {
-                document.getElementById("cartProducts3").style.display = "none";
+      if (localStorage.getItem("quantity3") == 0) {
+        document.getElementById("cartProducts3").style.display = "none";
 
-            }
-            if (localStorage.getItem("quantity4") == 0) {
-                document.getElementById("cartProducts4").style.display = "none";
+      }
+      if (localStorage.getItem("quantity4") == 0) {
+        document.getElementById("cartProducts4").style.display = "none";
 
-            }
-            if (localStorage.getItem("quantity5") == 0) {
-                document.getElementById("cartProducts5").style.display = "none";
+      }
+      if (localStorage.getItem("quantity5") == 0) {
+        document.getElementById("cartProducts5").style.display = "none";
 
-            }
-            if (localStorage.getItem("quantity6") == 0) {
-                document.getElementById("cartProducts6").style.display = "none";
+      }
+      if (localStorage.getItem("quantity6") == 0) {
+        document.getElementById("cartProducts6").style.display = "none";
 
-            }
+      }
 
 
 
-            document.getElementById("quantity1").value = localStorage.getItem("quantity1");
-            document.getElementById("quantity2").value = localStorage.getItem("quantity2");
-            document.getElementById("quantity3").value = localStorage.getItem("quantity3");
-            document.getElementById("quantity4").value = localStorage.getItem("quantity4");
-            document.getElementById("quantity5").value = localStorage.getItem("quantity5");
-            document.getElementById("quantity6").value = localStorage.getItem("quantity6");
+      document.getElementById("quantity1").value = localStorage.getItem("quantity1");
+      document.getElementById("quantity2").value = localStorage.getItem("quantity2");
+      document.getElementById("quantity3").value = localStorage.getItem("quantity3");
+      document.getElementById("quantity4").value = localStorage.getItem("quantity4");
+      document.getElementById("quantity5").value = localStorage.getItem("quantity5");
+      document.getElementById("quantity6").value = localStorage.getItem("quantity6");
 
 
-            document.getElementById("total1").innerHTML = '$' + localStorage.getItem("quantity1") * 10.99;
-            document.getElementById("total2").innerHTML = '$' + localStorage.getItem("quantity2") * 11.99;
-            document.getElementById("total3").innerHTML = '$' + localStorage.getItem("quantity3") * 8.99;
-            document.getElementById("total4").innerHTML = '$' + localStorage.getItem("quantity4") * 10.99;
-            document.getElementById("total5").innerHTML = '$' + localStorage.getItem("quantity5") * 11.99;
-            document.getElementById("total6").innerHTML = '$' + localStorage.getItem("quantity6") * 8.99;
+      document.getElementById("total1").innerHTML = '$' + localStorage.getItem("quantity1") * 10.99;
+      document.getElementById("total2").innerHTML = '$' + localStorage.getItem("quantity2") * 11.99;
+      document.getElementById("total3").innerHTML = '$' + localStorage.getItem("quantity3") * 8.99;
+      document.getElementById("total4").innerHTML = '$' + localStorage.getItem("quantity4") * 10.99;
+      document.getElementById("total5").innerHTML = '$' + localStorage.getItem("quantity5") * 11.99;
+      document.getElementById("total6").innerHTML = '$' + localStorage.getItem("quantity6") * 8.99;
 
-            document.getElementById("totalPrice").innerHTML = '$' + (localStorage.getItem("quantity1") * 10.99 +
-                localStorage.getItem("quantity2") * 11.99 + localStorage.getItem("quantity3") * 8.99 +
-                localStorage
-                .getItem("quantity4") * 10.99 + localStorage.getItem("quantity5") * 11.99 + localStorage
-                .getItem("quantity6") * 8.99);
+      document.getElementById("totalPrice").innerHTML = '$' + (localStorage.getItem("quantity1") * 10.99 +
+        localStorage.getItem("quantity2") * 11.99 + localStorage.getItem("quantity3") * 8.99 +
+        localStorage
+        .getItem("quantity4") * 10.99 + localStorage.getItem("quantity5") * 11.99 + localStorage
+        .getItem("quantity6") * 8.99);
 
 
 
-            if (localStorage.getItem("quantity1") + localStorage.getItem("quantity2") + localStorage.getItem(
-                    "quantity3") + localStorage.getItem("quantity4") + localStorage.getItem("quantity5") +
-                localStorage.getItem("quantity6") == 0) {
-                document.getElementById("empty").innerHTML = "Your cart is empty.";
-                document.getElementById("checkoutButton").style.display = "none";
-                document.getElementById("price").style.display = "none";
+      if (localStorage.getItem("quantity1") + localStorage.getItem("quantity2") + localStorage.getItem(
+          "quantity3") + localStorage.getItem("quantity4") + localStorage.getItem("quantity5") +
+        localStorage.getItem("quantity6") == 0) {
+        document.getElementById("empty").innerHTML = "Your cart is empty.";
+        document.getElementById("checkoutButton").style.display = "none";
+        document.getElementById("price").style.display = "none";
 
-            } else {
-                document.getElementById("empty").style.display = "none";
-                document.getElementById("checkoutButton").style.display = "block";
+      } else {
+        document.getElementById("empty").style.display = "none";
+        document.getElementById("checkoutButton").style.display = "block";
 
-            }
+      }
 
 
-        }
+    }
 
-        function remove1() {
-            document.getElementById("cartProducts1").style.display = "none";
-            localStorage.setItem("quantity1", 0)
+    function remove1() {
+      document.getElementById("cartProducts1").style.display = "none";
+      localStorage.setItem("quantity1", 0)
 
-        }
+    }
 
-        function remove2() {
-            document.getElementById("cartProducts2").style.display = "none";
-            localStorage.setItem("quantity1", 0)
+    function remove2() {
+      document.getElementById("cartProducts2").style.display = "none";
+      localStorage.setItem("quantity1", 0)
 
-        }
+    }
 
-        function remove3() {
-            document.getElementById("cartProducts3").style.display = "none";
-            localStorage.setItem("quantity1", 0)
+    function remove3() {
+      document.getElementById("cartProducts3").style.display = "none";
+      localStorage.setItem("quantity1", 0)
 
-        }
+    }
 
-        function remove4() {
-            document.getElementById("cartProducts4").style.display = "none";
-            localStorage.setItem("quantity1", 0)
+    function remove4() {
+      document.getElementById("cartProducts4").style.display = "none";
+      localStorage.setItem("quantity1", 0)
 
-        }
+    }
 
-        function remove5() {
-            document.getElementById("cartProducts5").style.display = "none";
-            localStorage.setItem("quantity1", 0)
+    function remove5() {
+      document.getElementById("cartProducts5").style.display = "none";
+      localStorage.setItem("quantity1", 0)
 
-        }
+    }
 
-        function remove6() {
-            document.getElementById("cartProducts6").style.display = "none";
-            localStorage.setItem("quantity1", 0)
+    function remove6() {
+      document.getElementById("cartProducts6").style.display = "none";
+      localStorage.setItem("quantity1", 0)
 
-        }
+    }
 
 
 
-        function minus1() {
+    function minus1() {
 
-            if (localStorage.getItem("quantity1") > 0) {
-                document.getElementById("quantity1").stepDown();
-                localStorage.setItem("quantity1", document.getElementById("quantity1").value);
+      if (localStorage.getItem("quantity1") > 0) {
+        document.getElementById("quantity1").stepDown();
+        localStorage.setItem("quantity1", document.getElementById("quantity1").value);
 
-            }
-        }
+      }
+    }
 
-        function plus1() {
-            document.getElementById("quantity1").stepUp();
-            localStorage.setItem("quantity1", document.getElementById("quantity1").value)
+    function plus1() {
+      document.getElementById("quantity1").stepUp();
+      localStorage.setItem("quantity1", document.getElementById("quantity1").value)
 
-        }
+    }
 
 
-        function minus2() {
-            if (document.getElementById("quantity2") > 0) {
-                document.getElementById("quantity2").stepDown();
-                localStorage.setItem("quantity2", document.getElementById("quantity2").value)
+    function minus2() {
+      if (document.getElementById("quantity2") > 0) {
+        document.getElementById("quantity2").stepDown();
+        localStorage.setItem("quantity2", document.getElementById("quantity2").value)
 
-            }
+      }
 
-        }
+    }
 
-        function plus2() {
-            document.getElementById("quantity2").stepUp();
-            localStorage.setItem("quantity2", document.getElementById("quantity2").value)
+    function plus2() {
+      document.getElementById("quantity2").stepUp();
+      localStorage.setItem("quantity2", document.getElementById("quantity2").value)
 
-        }
+    }
 
 
-        function minus3() {
-            if (document.getElementById("quantity3") > 0) {
-                document.getElementById("quantity3").stepDown();
-                localStorage.setItem("quantity3", document.getElementById("quantity3").value)
+    function minus3() {
+      if (document.getElementById("quantity3") > 0) {
+        document.getElementById("quantity3").stepDown();
+        localStorage.setItem("quantity3", document.getElementById("quantity3").value)
 
-            }
+      }
 
-        }
+    }
 
-        function plus3() {
+    function plus3() {
 
-            document.getElementById("quantity3").stepUp();
-            localStorage.setItem("quantity3", document.getElementById("quantity3").value)
+      document.getElementById("quantity3").stepUp();
+      localStorage.setItem("quantity3", document.getElementById("quantity3").value)
 
-        }
+    }
 
-        function minus4() {
-            if (document.getElementById("quantity4") > 0) {
+    function minus4() {
+      if (document.getElementById("quantity4") > 0) {
 
-                document.getElementById("quantity4").stepDown();
-                localStorage.setItem("quantity4", document.getElementById("quantity4").value)
+        document.getElementById("quantity4").stepDown();
+        localStorage.setItem("quantity4", document.getElementById("quantity4").value)
 
-            }
-        }
+      }
+    }
 
-        function plus4() {
-            document.getElementById("quantity4").stepUp();
+    function plus4() {
+      document.getElementById("quantity4").stepUp();
 
-            localStorage.setItem("quantity4", document.getElementById("quantity4").value)
+      localStorage.setItem("quantity4", document.getElementById("quantity4").value)
 
-        }
+    }
 
-        function minus5() {
-            if (document.getElementById("quantity5") > 0) {
-                document.getElementById("quantity5").stepDown();
-                localStorage.setItem("quantity5", document.getElementById("quantity5").value)
+    function minus5() {
+      if (document.getElementById("quantity5") > 0) {
+        document.getElementById("quantity5").stepDown();
+        localStorage.setItem("quantity5", document.getElementById("quantity5").value)
 
-            }
+      }
 
-        }
+    }
 
-        function plus5() {
+    function plus5() {
 
-            document.getElementById("quantity5").stepUp();
-            localStorage.setItem("quantity5", document.getElementById("quantity5").value)
+      document.getElementById("quantity5").stepUp();
+      localStorage.setItem("quantity5", document.getElementById("quantity5").value)
 
-        }
+    }
 
-        function minus6() {
-            if (document.getElementById("quantity6") > 0) {
-                document.getElementById("quantity6").stepDown();
-                localStorage.setItem("quantity6", document.getElementById("quantity6").value)
+    function minus6() {
+      if (document.getElementById("quantity6") > 0) {
+        document.getElementById("quantity6").stepDown();
+        localStorage.setItem("quantity6", document.getElementById("quantity6").value)
 
-            }
+      }
 
-        }
+    }
 
-        function plus6() {
-            document.getElementById("quantity6").stepUp();
-            localStorage.setItem("quantity6", document.getElementById("quantity6").value)
+    function plus6() {
+      document.getElementById("quantity6").stepUp();
+      localStorage.setItem("quantity6", document.getElementById("quantity6").value)
 
 
-        }
+    }
 
-        function checkout() {
-            location.href = "checkout.html"
-        }
+    function checkout() {
+      location.href = "checkout.html"
+    }
 
-        function homepage() {
-            location.href = "index.html"
-        }
+    function homepage() {
+      location.href = "index.html"
+    }
 
-        setInterval(changeFontSize, 200);
+    setInterval(changeFontSize, 200);
 
-        function changeFontSize() {
-            if (window.innerWidth < 1280 && window.innerWidth >= 908) {
-                document.getElementById("nav1").style.fontSize = "20px"
-                document.getElementById("nav2").style.fontSize = "20px"
-                document.getElementById("nav3").style.fontSize = "20px"
-                document.getElementById("nav4").style.fontSize = "20px"
-                document.getElementById("nav5").style.fontSize = "20px"
-            } else if (window.innerWidth < 908) {
-                document.getElementById("nav1").style.fontSize = "16px"
-                document.getElementById("nav2").style.fontSize = "16px"
-                document.getElementById("nav3").style.fontSize = "16px"
-                document.getElementById("nav4").style.fontSize = "16px"
-                document.getElementById("nav5").style.fontSize = "16px"
-            } else {
-                document.getElementById("nav1").style.fontSize = "23px"
-                document.getElementById("nav2").style.fontSize = "23px"
-                document.getElementById("nav3").style.fontSize = "23px"
-                document.getElementById("nav4").style.fontSize = "23px"
-                document.getElementById("nav5").style.fontSize = "23px"
-            }
-        }
+    function changeFontSize() {
+      if (window.innerWidth < 1280 && window.innerWidth >= 908) {
+        document.getElementById("nav1").style.fontSize = "20px"
+        document.getElementById("nav2").style.fontSize = "20px"
+        document.getElementById("nav3").style.fontSize = "20px"
+        document.getElementById("nav4").style.fontSize = "20px"
+        document.getElementById("nav5").style.fontSize = "20px"
+      } else if (window.innerWidth < 908) {
+        document.getElementById("nav1").style.fontSize = "16px"
+        document.getElementById("nav2").style.fontSize = "16px"
+        document.getElementById("nav3").style.fontSize = "16px"
+        document.getElementById("nav4").style.fontSize = "16px"
+        document.getElementById("nav5").style.fontSize = "16px"
+      } else {
+        document.getElementById("nav1").style.fontSize = "23px"
+        document.getElementById("nav2").style.fontSize = "23px"
+        document.getElementById("nav3").style.fontSize = "23px"
+        document.getElementById("nav4").style.fontSize = "23px"
+        document.getElementById("nav5").style.fontSize = "23px"
+      }
+    }
 
+    setInterval(updateItemNumber, 200);
 
+    function updateItemNumber() {
 
-    </script>
+      var totalItems = (localStorage.getItem("quantity1") * 1 +
+        localStorage.getItem("quantity2") * 1 + localStorage.getItem("quantity3") * 1 +
+        localStorage
+        .getItem("quantity4") * 1 + localStorage.getItem("quantity5") * 1 + localStorage
+        .getItem("quantity6") * 1);
+      if (totalItems > 0) {
+        document.getElementById("itemNumber").innerHTML = totalItems;
+      }
 
-    <section class="cartHome">
 
+    }
+  </script>
 
-        <nav>
-            <div class="logo" onclick="homepage()">
+  <section class="cartHome">
 
 
-                <img class="logoImg" src="images/logo.png">
 
+            <nav>
+                <div class="logo" onclick="homepage()">
 
-            </div>
-            <a id="nav1" class="navLink" href="index.html">Home</a>
-            <a id="nav2" class="navLink" href="products.html">Products</a>
-            <a id="nav3" class="navLink" href="size.html">Sizes</a>
 
-            <a id="nav4" class="navLink" href="contact.html">Contact</a>
-            <a id="nav5" class="navLink" href="cart.html">
-                <img class="navLink" src="images/cart.png">
-            </a>
-        </nav>
+                    <img class="logoImg" src="images/logo.png">
 
-        <ul class="cart">
-            <li class="cartProducts" id="cartProducts1">
-                <img src="images/blue tshirt.png">
 
-                <div id="change1">
-                    <button class="minus" onclick="minus1()">-</button>
-                    <input type="number" min="0" id="quantity1" step="1" value="0">
-                    <button class="plus" onclick="plus1()">+</button><br>
                 </div>
+                <a id="nav1" class="navLink" href="index.html">Home</a>
+                <a id="nav2" class="navLink" href="products.html">Products</a>
+                <a id="nav3" class="navLink" href="size.html">Sizes</a>
 
-                <p onclick="remove1()">Remove</p>
-                <p id="total1"></p>
-            </li>
+                <a id="nav4" class="navLink" href="contact.html">Contact</a>
+                <a id="nav5" class="navLink" href="cart.html">
+                    <img class="navLink" src="images/cart.png">
+                </a>
 
+                <a id="nav6" class="navLink" href="cart.html">
+                    <p id="itemNumber"></p>
+                </a>
+            </nav>
 
-            <li class="cartProducts" id="cartProducts2">
-                <img src="images/green tshirt.png">
+    <ul class="cart">
+      <li class="cartProducts" id="cartProducts1">
+        <img src="images/blue tshirt.png">
 
-                <div id="change2">
-                    <button class="minus" onclick="minus2()">-</button>
-                    <input type="number" min="0" id="quantity2" step="1" value="0">
-                    <button class="plus" onclick="plus2()">+</button><br>
-                </div>
+        <div id="change1">
+          <button class="minus" onclick="minus1()">-</button>
+          <input type="number" min="0" id="quantity1" step="1" value="0">
+          <button class="plus" onclick="plus1()">+</button><br>
+        </div>
 
-                <p onclick="remove2()">Remove</p>
-                <p id="total2"></p>
-            </li>
-
-            <li class="cartProducts" id="cartProducts3">
-                <img src="images/yellow tshirt.png">
-
-                <div id="change3">
-                    <button class="minus" onclick="minus3()">-</button>
-                    <input type="number" min="0" id="quantity3" step="1" value="0">
-                    <button class="plus" onclick="plus3()">+</button><br>
-                </div>
-
-                <p onclick="remove3()">Remove</p>
-                <p id="total3"></p>
-            </li>
-
-            <li class="cartProducts" id="cartProducts4">
-                <img src="images/blue tshirt w.png">
-
-                <div id="change4">
-                    <button class="minus" onclick="minus4()">-</button>
-                    <input type="number" min="0" id="quantity4" step="1" value="0">
-                    <button class="plus" onclick="plus4()">+</button><br>
-                </div>
-
-                <p onclick="remove4()">Remove</p>
-                <p id="total4"></p>
-            </li>
-
-            <li class="cartProducts" id="cartProducts5">
-                <img src="images/green tshirt w.png">
-
-                <div id="change5">
-                    <button class="minus" onclick="minus5()">-</button>
-                    <input type="number" min="0" id="quantity5" step="1" value="0">
-                    <button class="plus" onclick="plus5()">+</button><br>
-                </div>
-
-                <p onclick="remove5()">Remove</p>
-                <p id="total5"></p>
-            </li>
-
-            <li class="cartProducts" id="cartProducts6">
-                <img src="images/yellow tshirt w.png">
-
-                <div id="change6">
-                    <button class="minus" onclick="minus6()">-</button>
-                    <input type="number" min="0" id="quantity6" step="1" value="0">
-                    <button class="plus" onclick="plus6()">+</button><br>
-                </div>
-
-                <p onclick="remove6()">Remove</p>
-                <p id="total6"></p>
-            </li>
-
-            <li class="price" id="price">
-
-                <div id="totalText">
-                    <p>Total</p>
-                </div>
-                <div id="totalPrice"></div>
+        <p onclick="remove1()">Remove</p>
+        <p id="total1"></p>
+      </li>
 
 
-            </li>
+      <li class="cartProducts" id="cartProducts2">
+        <img src="images/green tshirt.png">
 
-            <p id="empty"></p>
+        <div id="change2">
+          <button class="minus" onclick="minus2()">-</button>
+          <input type="number" min="0" id="quantity2" step="1" value="0">
+          <button class="plus" onclick="plus2()">+</button><br>
+        </div>
 
-            <button id="checkoutButton" onclick="checkout()">Proceed to checkout</button>
+        <p onclick="remove2()">Remove</p>
+        <p id="total2"></p>
+      </li>
+
+      <li class="cartProducts" id="cartProducts3">
+        <img src="images/yellow tshirt.png">
+
+        <div id="change3">
+          <button class="minus" onclick="minus3()">-</button>
+          <input type="number" min="0" id="quantity3" step="1" value="0">
+          <button class="plus" onclick="plus3()">+</button><br>
+        </div>
+
+        <p onclick="remove3()">Remove</p>
+        <p id="total3"></p>
+      </li>
+
+      <li class="cartProducts" id="cartProducts4">
+        <img src="images/blue tshirt w.png">
+
+        <div id="change4">
+          <button class="minus" onclick="minus4()">-</button>
+          <input type="number" min="0" id="quantity4" step="1" value="0">
+          <button class="plus" onclick="plus4()">+</button><br>
+        </div>
+
+        <p onclick="remove4()">Remove</p>
+        <p id="total4"></p>
+      </li>
+
+      <li class="cartProducts" id="cartProducts5">
+        <img src="images/green tshirt w.png">
+
+        <div id="change5">
+          <button class="minus" onclick="minus5()">-</button>
+          <input type="number" min="0" id="quantity5" step="1" value="0">
+          <button class="plus" onclick="plus5()">+</button><br>
+        </div>
+
+        <p onclick="remove5()">Remove</p>
+        <p id="total5"></p>
+      </li>
+
+      <li class="cartProducts" id="cartProducts6">
+        <img src="images/yellow tshirt w.png">
+
+        <div id="change6">
+          <button class="minus" onclick="minus6()">-</button>
+          <input type="number" min="0" id="quantity6" step="1" value="0">
+          <button class="plus" onclick="plus6()">+</button><br>
+        </div>
+
+        <p onclick="remove6()">Remove</p>
+        <p id="total6"></p>
+      </li>
+
+      <li class="price" id="price">
+
+        <div id="totalText">
+          <p>Total</p>
+        </div>
+        <div id="totalPrice"></div>
+
+
+      </li>
+
+      <p id="empty"></p>
+
+      <button id="checkoutButton" onclick="checkout()">Proceed to checkout</button>
 
 
 
 
-        </ul>
+    </ul>
 
 
 
 
-    </section>
+  </section>
 </body>

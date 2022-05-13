@@ -58,7 +58,7 @@
 
 
         function minus2() {
-            if (document.getElementById("quantity2") > 0) {
+            if (localStorage.getItem("quantity2") > 0) {
                 document.getElementById("quantity2").stepDown();
                 localStorage.setItem("quantity2", document.getElementById("quantity2").value)
 
@@ -74,7 +74,7 @@
 
 
         function minus3() {
-            if (document.getElementById("quantity3") > 0) {
+            if (localStorage.getItem("quantity3") > 0) {
                 document.getElementById("quantity3").stepDown();
                 localStorage.setItem("quantity3", document.getElementById("quantity3").value)
 
@@ -90,7 +90,7 @@
         }
 
         function minus4() {
-            if (document.getElementById("quantity4") > 0) {
+            if (localStorage.getItem("quantity4") > 0) {
 
                 document.getElementById("quantity4").stepDown();
                 localStorage.setItem("quantity4", document.getElementById("quantity4").value)
@@ -106,7 +106,7 @@
         }
 
         function minus5() {
-            if (document.getElementById("quantity5") > 0) {
+            if (localStorage.getItem("quantity5") > 0) {
                 document.getElementById("quantity5").stepDown();
                 localStorage.setItem("quantity5", document.getElementById("quantity5").value)
 
@@ -122,7 +122,7 @@
         }
 
         function minus6() {
-            if (document.getElementById("quantity6") > 0) {
+            if (localStorage.getItem("quantity6") > 0) {
                 document.getElementById("quantity6").stepDown();
                 localStorage.setItem("quantity6", document.getElementById("quantity6").value)
 
@@ -189,30 +189,50 @@
             }
         }
 
+        setInterval(updateItemNumber, 200);
 
+        function updateItemNumber() {
+
+var totalItems = (localStorage.getItem("quantity1") * 1 +
+    localStorage.getItem("quantity2") * 1 + localStorage.getItem("quantity3") * 1 +
+    localStorage
+    .getItem("quantity4") * 1 + localStorage.getItem("quantity5") * 1 + localStorage
+    .getItem("quantity6") * 1);
+          if(totalItems > 0){
+            document.getElementById("itemNumber").innerHTML = totalItems;
+          }
+
+
+        }
     </script>
 
     <section class="home">
 
 
 
-        <nav>
-            <div class="logo" onclick="homepage()">
 
 
-                <img class="logoImg" src="images/logo.png">
+              <nav>
+                  <div class="logo" onclick="homepage()">
 
 
-            </div>
-            <a id="nav1" class="navLink" href="index.html">Home</a>
-            <a id="nav2" class="navLink" href="products.html">Products</a>
-            <a id="nav3" class="navLink" href="size.html">Sizes</a>
+                      <img class="logoImg" src="images/logo.png">
 
-            <a id="nav4" class="navLink" href="contact.html">Contact</a>
-            <a id="nav5" class="navLink" href="cart.html">
-                <img class="navLink" src="images/cart.png">
-            </a>
-        </nav>
+
+                  </div>
+                  <a id="nav1" class="navLink" href="index.html">Home</a>
+                  <a id="nav2" class="navLink" href="products.html">Products</a>
+                  <a id="nav3" class="navLink" href="size.html">Sizes</a>
+
+                  <a id="nav4" class="navLink" href="contact.html">Contact</a>
+                  <a id="nav5" class="navLink" href="cart.html">
+                      <img class="navLink" src="images/cart.png">
+                  </a>
+
+                  <a id="nav6" class="navLink" href="cart.html">
+                      <p id="itemNumber"></p>
+                  </a>
+              </nav>
 
         <ul class="products">
 

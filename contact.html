@@ -41,29 +41,48 @@
             }
         }
 
+        setInterval(updateItemNumber, 200);
 
+        function updateItemNumber() {
+
+var totalItems = (localStorage.getItem("quantity1") * 1 +
+    localStorage.getItem("quantity2") * 1 + localStorage.getItem("quantity3") * 1 +
+    localStorage
+    .getItem("quantity4") * 1 + localStorage.getItem("quantity5") * 1 + localStorage
+    .getItem("quantity6") * 1);
+          if(totalItems > 0){
+            document.getElementById("itemNumber").innerHTML = totalItems;
+          }
+
+
+        }
     </script>
 
     <section class="home">
 
 
-        <nav>
-            <div class="logo" onclick="homepage()">
+
+              <nav>
+                  <div class="logo" onclick="homepage()">
 
 
-                <img class="logoImg" src="images/logo.png">
+                      <img class="logoImg" src="images/logo.png">
 
 
-            </div>
-            <a id="nav1" class="navLink" href="index.html">Home</a>
-            <a id="nav2" class="navLink" href="products.html">Products</a>
-            <a id="nav3" class="navLink" href="size.html">Sizes</a>
+                  </div>
+                  <a id="nav1" class="navLink" href="index.html">Home</a>
+                  <a id="nav2" class="navLink" href="products.html">Products</a>
+                  <a id="nav3" class="navLink" href="size.html">Sizes</a>
 
-            <a id="nav4" class="navLink" href="contact.html">Contact</a>
-            <a id="nav5" class="navLink" href="cart.html">
-                <img class="navLink" src="images/cart.png">
-            </a>
-        </nav>
+                  <a id="nav4" class="navLink" href="contact.html">Contact</a>
+                  <a id="nav5" class="navLink" href="cart.html">
+                      <img class="navLink" src="images/cart.png">
+                  </a>
+
+                  <a id="nav6" class="navLink" href="cart.html">
+                      <p id="itemNumber"></p>
+                  </a>
+              </nav>
 
         <div class="contact">
 

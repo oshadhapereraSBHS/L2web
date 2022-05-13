@@ -98,7 +98,21 @@
                 document.getElementById("nav5").style.fontSize = "23px"
             }
 
+        }
 
+
+        setInterval(updateItemNumber, 200);
+
+        function updateItemNumber() {
+
+var totalItems = (localStorage.getItem("quantity1") * 1 +
+    localStorage.getItem("quantity2") * 1 + localStorage.getItem("quantity3") * 1 +
+    localStorage
+    .getItem("quantity4") * 1 + localStorage.getItem("quantity5") * 1 + localStorage
+    .getItem("quantity6") * 1);
+          if(totalItems > 0){
+            document.getElementById("itemNumber").innerHTML = totalItems;
+          }
 
 
         }
@@ -122,6 +136,10 @@
             <a id="nav4" class="navLink" href="contact.html">Contact</a>
             <a id="nav5" class="navLink" href="cart.html">
                 <img class="navLink" src="images/cart.png">
+            </a>
+
+            <a id="nav6" class="navLink" href="cart.html">
+                <p id="itemNumber"></p>
             </a>
         </nav>
 

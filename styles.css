@@ -26,13 +26,13 @@ nav {
     display: inline-block;
 
     display: grid;
-    grid-template-columns: 1fr 12% 12% 12% 12% 10%;
+    grid-template-columns: 1fr 12% 14% 10% 12% 10% 2%;
 }
 
 nav img {
 
     max-width: 35%;
-    padding-right: 15%;
+
     align-self: center;
 
 }
@@ -40,7 +40,12 @@ nav img {
 nav a {
     align-self: center;
     font-size: clamp(10px, 3em, 23px);
+justify-self:end
+}
 
+#itemNumbers {
+    text-align: center;
+    vertical-align: middle;
 }
 
 
@@ -105,6 +110,7 @@ line-height: 2em;
     padding: 2%;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: 2%
 }
 
 .sliderImg {
