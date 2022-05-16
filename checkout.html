@@ -9,7 +9,9 @@
 
     <script>
         function checkoutOverlay(event) {
+            //when checkout form is submitted, stop page from reloading
             event.preventDefault();
+            //when checkout form is submitted, remove all items from cart
             localStorage.setItem("quantity1", 0)
             localStorage.setItem("quantity2", 0)
             localStorage.setItem("quantity3", 0)
@@ -17,30 +19,37 @@
             localStorage.setItem("quantity5", 0)
             localStorage.setItem("quantity6", 0)
 
-
+            //remve checkout form and say form is received
             document.getElementById("form4").innerHTML = "Thank you for shopping with us.";
             document.getElementById("form5").style.display = "none";
-
             document.getElementById("checkoutBackground").style.display = "none";
-
         }
 
         window.onload = function () {
-            document.getElementById("totalValue").value = '$' + (localStorage.getItem("quantity1") * 10.99 +
-                localStorage.getItem("quantity2") * 11.99 + localStorage.getItem("quantity3") * 8.99 +
-                localStorage
-                .getItem("quantity4") * 10.99 + localStorage.getItem("quantity5") * 11.99 + localStorage
-                .getItem("quantity6") * 8.99);
+            //show total price in checkout form
+            document.getElementById("totalValue").value = '$' +
+                (localStorage.getItem("quantity1") * 10.99 +
+                    localStorage.getItem("quantity2") * 11.99 +
+                    localStorage.getItem("quantity3") * 8.99 +
+                    localStorage.getItem("quantity4") * 10.99 +
+                    localStorage.getItem("quantity5") * 11.99 +
+                    localStorage.getItem("quantity6") * 8.99);
 
         }
 
+        //take user to index.html when logo is clicked
         function homepage() {
             location.href = "index.html"
         }
+
+        //check whether font needs to be changed every 0.2 second
+
         setInterval(changeFontSize, 200);
 
         function changeFontSize() {
             if (window.innerWidth < 1280 && window.innerWidth >= 908) {
+                //if window width is smaller than 1280
+                //change navigation text to 20px
                 document.getElementById("nav1").style.fontSize = "20px"
                 document.getElementById("nav2").style.fontSize = "20px"
                 document.getElementById("nav3").style.fontSize = "20px"
@@ -48,6 +57,8 @@
                 document.getElementById("nav5").style.fontSize = "20px"
                 document.getElementById("itemNumber").style.fontSize = "20px"
             } else if (window.innerWidth < 908) {
+                //if window width is smaller than 1280
+                //change navigation text to 16px
                 document.getElementById("nav1").style.fontSize = "16px"
                 document.getElementById("nav2").style.fontSize = "16px"
                 document.getElementById("nav3").style.fontSize = "16px"
@@ -55,6 +66,8 @@
                 document.getElementById("nav5").style.fontSize = "16px"
                 document.getElementById("itemNumber").style.fontSize = "16px"
             } else {
+                //if window width is bigger than 1280
+                //change navigation text to 25px
                 document.getElementById("nav1").style.fontSize = "23px"
                 document.getElementById("nav2").style.fontSize = "23px"
                 document.getElementById("nav3").style.fontSize = "23px"
@@ -64,48 +77,58 @@
             }
         }
 
+        //update item number shown beside cart every 0.2 second
+
         setInterval(updateItemNumber, 200);
 
         function updateItemNumber() {
+            //set a variable for total quantity of items
+            var totalItems = (localStorage.getItem("quantity1") * 1 +
+                localStorage.getItem("quantity2") * 1 +
+                localStorage.getItem("quantity3") * 1 +
+                localStorage.getItem("quantity4") * 1 +
+                localStorage.getItem("quantity5") * 1 +
+                localStorage.getItem("quantity6") * 1);
 
-var totalItems = (localStorage.getItem("quantity1") * 1 +
-    localStorage.getItem("quantity2") * 1 + localStorage.getItem("quantity3") * 1 +
-    localStorage
-    .getItem("quantity4") * 1 + localStorage.getItem("quantity5") * 1 + localStorage
-    .getItem("quantity6") * 1);
-          if(totalItems > 0){
-            document.getElementById("itemNumber").innerHTML = totalItems;
-          }
-
+            if (totalItems > 0) {
+                //if total item number is above 0, show item number beside cart
+                document.getElementById("itemNumber").style.display = "block";
+                document.getElementById("itemNumber").innerHTML = totalItems;
+            } else {
+                //if total item number is below 0, don't show item number beside cart
+                document.getElementById("itemNumber").style.display = "none";
+            }
 
         }
     </script>
 
+
+    <!--grid for page-->
     <section class="home">
 
+        <nav>
+            <div class="logo" onclick="homepage()">
+                <!--logo image-->
+                <img class="logoImg" src="images/logo.png">
+            </div>
 
-              <nav>
-                  <div class="logo" onclick="homepage()">
+            <!--navigation bar-->
+            <a id="nav1" class="navLink" href="index.html">Home</a>
+            <a id="nav2" class="navLink" href="products.html">Products</a>
+            <a id="nav3" class="navLink" href="size.html">Sizes</a>
+            <a id="nav4" class="navLink" href="contact.html">Contact</a>
 
+            <!--cart icon-->
+            <a id="nav5" class="navLink" href="cart.html">
+                <img class="navLink" src="images/cart.png">
+            </a>
+            <!--item total-->
+            <a id="nav6" class="navLink" href="cart.html">
+                <p id="itemNumber"></p>
+            </a>
+        </nav>
 
-                      <img class="logoImg" src="images/logo.png">
-
-
-                  </div>
-                  <a id="nav1" class="navLink" href="index.html">Home</a>
-                  <a id="nav2" class="navLink" href="products.html">Products</a>
-                  <a id="nav3" class="navLink" href="size.html">Sizes</a>
-
-                  <a id="nav4" class="navLink" href="contact.html">Contact</a>
-                  <a id="nav5" class="navLink" href="cart.html">
-                      <img class="navLink" src="images/cart.png">
-                  </a>
-
-                  <a id="nav6" class="navLink" href="cart.html">
-                      <p id="itemNumber"></p>
-                  </a>
-              </nav>
-
+        <!--grid for content-->
         <div class="checkout">
 
 
@@ -113,10 +136,12 @@ var totalItems = (localStorage.getItem("quantity1") * 1 +
 
 
             <div class="col1">
-
+                <!--first column of checkout form-->
                 <form id="form4">
+                    <!--heading for column 1-->
                     <h3>Billing Details</h3><br><br>
 
+                    <!--form with labels and input-->
                     <label>First Name</label><br>
                     <input type="text"><br><br>
 
@@ -146,10 +171,15 @@ var totalItems = (localStorage.getItem("quantity1") * 1 +
             </div>
 
             <div class="col2">
+                <!--first column of checkout form-->
 
                 <form id="form5">
+                    <!--heading for column 1-->
 
                     <h3>Payment Details</h3><br><br>
+
+                    <!--form with labels and input-->
+
                     <label>Credit Card Number</label><br>
                     <input type="text"><br><br>
 
@@ -159,12 +189,14 @@ var totalItems = (localStorage.getItem("quantity1") * 1 +
                     <label>CVV</label><br>
                     <input type="number"><br><br>
 
+                    <!--total price as readonly text-->
                     <label>Total</label><br>
                     <input id="totalValue" type="text" readonly><br><br>
 
                     <label>Promo Code</label><br>
                     <input type="text"><br><br>
 
+                    <!--submit button-->
                     <button id="confirmButton" onclick="checkoutOverlay(event)">Confirm</button>
 
 
@@ -172,6 +204,9 @@ var totalItems = (localStorage.getItem("quantity1") * 1 +
                 </form>
 
             </div>
+
+
+            <!--background-->
             <div id="checkoutBackground" class="checkoutBackground"></div>
 
         </div>

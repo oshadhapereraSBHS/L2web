@@ -8,35 +8,41 @@
 <body>
 
     <script>
+        //variable for counting slider changes
         var sliderCount = 1;
 
-
-
-  setInterval(changeSlider, 3000)
-
-
+        //change slider every 3 seconds
+        setInterval(changeSlider, 3000)
 
 
         function changeSlider() {
+            //when slider is changed, increase slider count by 1
             sliderCount++;
 
+            //if slider count is an even number
             if (sliderCount % 2 == 0) {
+                //change products images in slider
                 document.getElementById("sliderImg1").src = "images/green tshirt.png";
                 document.getElementById("sliderImg2").src = "images/yellow tshirt w.png";
+                //highlight second dot to sohw it is the second slide
                 document.getElementById("dot1img").src = "images/dot2.png";
                 document.getElementById("dot2img").src = "images/dot.png";
-
+                //change text on slide
                 document.getElementById("sliderText").innerHTML = document.getElementById("hiddenSliderText").innerHTML
-                document.getElementById("slider").style.backgroundImage = "url('images/sliderimg8.png')"
+                //change nackground image of slide
                 document.getElementById("slider").style.backgroundImage = "url('images/sliderimg8.png')"
             } else {
-
+                //if slider count is an odd number
+                //switch product images back to original
                 document.getElementById("sliderImg1").src = "images/background2.png";
                 document.getElementById("sliderImg2").src = "images/background1.png";
+                //highlight first dot to show it is the first slide
                 document.getElementById("dot1img").src = "images/dot.png";
                 document.getElementById("dot2img").src = "images/dot2.png";
+                //show original text
                 document.getElementById("sliderText").innerHTML = document.getElementById("originalSliderText")
                     .innerHTML
+                //switch background image back to original
                 document.getElementById("slider").style.backgroundImage = "url('images/sliderimg2.png')"
             }
         }
@@ -44,26 +50,29 @@
 
 
         window.onload = function () {
+            //only show default slide text when page loads
             document.getElementById("originalSliderText").style.display = "none";
             document.getElementById("hiddenSliderText").style.display = "none";
-
         }
 
+        //take user to index.html when logo is clicked
         function homepage() {
             location.href = "index.html"
         }
 
+        //check whether font needs to be changed every 0.2 second
         setInterval(changeFontSize, 200);
 
         function changeFontSize() {
             if (window.innerWidth < 1280 && window.innerWidth >= 908) {
+                //if window width is smaller than 1280
+                //change all text to 20px
                 document.getElementById("descriptionTextBox").style.fontSize = "20px"
                 document.getElementById("sliderText").style.fontSize = "20px"
                 document.getElementById("hiddenSliderText").style.fontSize = "20px"
                 document.getElementById("originalSliderText").style.fontSize = "20px"
                 document.getElementById("mensLink").style.fontSize = "20px"
                 document.getElementById("womensLink").style.fontSize = "20px"
-
                 document.getElementById("nav1").style.fontSize = "20px"
                 document.getElementById("nav2").style.fontSize = "20px"
                 document.getElementById("nav3").style.fontSize = "20px"
@@ -71,24 +80,23 @@
                 document.getElementById("nav5").style.fontSize = "20px"
                 document.getElementById("itemNumber").style.fontSize = "20px"
             } else if (window.innerWidth < 908) {
+                //if window width is smaller than 1280
+                //change all text to 16px
                 document.getElementById("descriptionTextBox").style.fontSize = "16px"
                 document.getElementById("sliderText").style.fontSize = "16px"
                 document.getElementById("hiddenSliderText").style.fontSize = "16px"
                 document.getElementById("originalSliderText").style.fontSize = "16px"
                 document.getElementById("mensLink").style.fontSize = "16px"
                 document.getElementById("womensLink").style.fontSize = "16px"
-
                 document.getElementById("nav1").style.fontSize = "16px"
                 document.getElementById("nav2").style.fontSize = "16px"
                 document.getElementById("nav3").style.fontSize = "16px"
                 document.getElementById("nav4").style.fontSize = "16px"
                 document.getElementById("nav5").style.fontSize = "16px"
-document.getElementById("itemNumber").style.fontSize = "16px"
-
-
-
-
+                document.getElementById("itemNumber").style.fontSize = "16px"
             } else {
+                //if window width is bigger than 1280
+                //change all text to 25px
                 document.getElementById("descriptionTextBox").style.fontSize = "25px"
                 document.getElementById("sliderText").style.fontSize = "25px"
                 document.getElementById("hiddenSliderText").style.fontSize = "25px"
@@ -106,72 +114,86 @@ document.getElementById("itemNumber").style.fontSize = "16px"
 
         }
 
-
+        //update item number shown beside cart every 0.2 second
         setInterval(updateItemNumber, 200);
 
         function updateItemNumber() {
+            //set a variable for total quantity of items
+            var totalItems = (localStorage.getItem("quantity1") * 1 +
+            localStorage.getItem("quantity2") * 1 +
+            localStorage.getItem("quantity3") * 1 +
+            localStorage.getItem("quantity4") * 1 +
+            localStorage.getItem("quantity5") * 1 +
+            localStorage.getItem("quantity6") * 1);
 
-var totalItems = (localStorage.getItem("quantity1") * 1 +
-    localStorage.getItem("quantity2") * 1 + localStorage.getItem("quantity3") * 1 +
-    localStorage
-    .getItem("quantity4") * 1 + localStorage.getItem("quantity5") * 1 + localStorage
-    .getItem("quantity6") * 1);
-          if(totalItems > 0){
-            document.getElementById("itemNumber").innerHTML = totalItems;
-          }
+
+            if (totalItems > 0) {
+                //if total item number is above 0, show item number beside cart
+                document.getElementById("itemNumber").style.display = "block";
+                document.getElementById("itemNumber").innerHTML = totalItems;
+            } else {
+                //if total item number is below 0, don't show item number beside cart
+                document.getElementById("itemNumber").style.display = "none";
+            }
 
 
         }
     </script>
-
+    <!--grid for page-->
     <section class="home">
 
 
         <nav>
             <div class="logo" onclick="homepage()">
-
-
+                <!--logo image-->
                 <img class="logoImg" src="images/logo.png">
-
-
             </div>
+
+            <!--navigation bar-->
             <a id="nav1" class="navLink" href="index.html">Home</a>
             <a id="nav2" class="navLink" href="products.html">Products</a>
             <a id="nav3" class="navLink" href="size.html">Sizes</a>
-
             <a id="nav4" class="navLink" href="contact.html">Contact</a>
+
+            <!--cart icon-->
             <a id="nav5" class="navLink" href="cart.html">
                 <img class="navLink" src="images/cart.png">
             </a>
-
+            <!--item total-->
             <a id="nav6" class="navLink" href="cart.html">
                 <p id="itemNumber"></p>
             </a>
         </nav>
 
 
-
+        <!--slider-->
         <div class="slider" id="slider">
 
+            <!--left arrow-->
             <div id="leftArrow">
-                <button onclick="changeSlider()">
-                    <</button> </div> <div id="rightArrow">
-                        <button onclick="changeSlider()">></button>
+                <button onclick="changeSlider()"><</button>
+            </div>
+                
+            <!--right arrow-->
+            <div id="rightArrow">
+                <button onclick="changeSlider()">></button>
             </div>
 
+            <!--slider background-->
             <div class="sliderImg">
                 <img id="sliderImg1" src="images/background2.png">
                 <img id="sliderImg2" src="images/background1.png">
 
             </div>
 
+            <!--text in slides-->
             <p class="sliderText" id="sliderText">
                 New season styles available now!
                 <br><br>
                 20% off for a limited time!
             </p>
 
-
+            <!--slide text for slide 1-->
             <p class="sliderText" id="originalSliderText">
                 New season styles available now!
                 <br><br>
@@ -179,19 +201,19 @@ var totalItems = (localStorage.getItem("quantity1") * 1 +
             </p>
 
 
-
+            <!--slide text for slide 2-->
             <p class="sliderText" id="hiddenSliderText">
                 Stock clearance!
                 <br><br>
                 T-shirts from $8.99!
             </p>
 
-
+            <!--shop now button-->
             <div class="sliderButton">
                 <button id="shopNowButton" onclick="window.location.href='products.html';">SHOP NOW</button>
-
             </div>
 
+            <!--two dots showing which slide is shown-->
             <div class="dot" id="dot1">
                 <img id="dot1img" src="images/dot.png">
             </div>
@@ -203,40 +225,43 @@ var totalItems = (localStorage.getItem("quantity1") * 1 +
         </div>
 
 
-
+        <!--subgrid for showing two products and description-->
         <div class="products">
+
+            <!--mens t shirt image-->
             <div class="mensImg">
                 <img id="mensImg" src="images/yellow tshirt.png">
 
             </div>
 
+            <!--womens t shirt image-->
             <div class="womensImg">
                 <img src="images/blue tshirt w.png">
 
             </div>
 
+            <!--box for description-->
             <div class="description">
 
             </div>
+
+            <!--link on mens tshirt-->
             <div class="mens">
                 <a id="mensLink" href="products.html">mens</a>
             </div>
+
+            <!--description box text-->
             <div class="descriptionText">
                 <p id="descriptionTextBox">Shop at Myshirt to get the latest styles at an affordable price.</p>
             </div>
 
-
+            <!--link on womens tshirt-->
             <div class="womens">
                 <a id="womensLink" href="products.html">womens</a>
             </div>
 
-
-
-
-
         </div>
 
     </section>
-
 
 </body>
