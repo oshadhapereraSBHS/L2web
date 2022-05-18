@@ -94,12 +94,18 @@
 
 
     function minus1() {
-      //if user have added items to cart (so quantity is > 0)
+      //if the product in the cart (so quantity is > 0)
       if (localStorage.getItem("quantity1") > 0) {
         //reduce quantity by 1
         document.getElementById("quantity1").stepDown();
         //store new value as quantity
         localStorage.setItem("quantity1", document.getElementById("quantity1").value);
+
+      }
+      //if user removes items using minus button
+      if (localStorage.getItem("quantity1") == 0) {
+        //remove products from cart
+        document.getElementById("cartProducts1").style.display = "none";
 
       }
     }
@@ -117,6 +123,10 @@
       if (localStorage.getItem("quantity2") > 0) {
         document.getElementById("quantity2").stepDown();
         localStorage.setItem("quantity2", document.getElementById("quantity2").value)
+      }
+
+      if (localStorage.getItem("quantity2") == 0) {
+        document.getElementById("cartProducts2").style.display = "none";
 
       }
 
@@ -135,7 +145,10 @@
         localStorage.setItem("quantity3", document.getElementById("quantity3").value)
 
       }
+      if (localStorage.getItem("quantity3") == 0) {
+        document.getElementById("cartProducts3").style.display = "none";
 
+      }
     }
 
     function plus3() {
@@ -150,6 +163,10 @@
 
         document.getElementById("quantity4").stepDown();
         localStorage.setItem("quantity4", document.getElementById("quantity4").value)
+
+      }
+      if (localStorage.getItem("quantity4") == 0) {
+        document.getElementById("cartProducts4").style.display = "none";
 
       }
     }
@@ -167,7 +184,10 @@
         localStorage.setItem("quantity5", document.getElementById("quantity5").value)
 
       }
+      if (localStorage.getItem("quantity5") == 0) {
+        document.getElementById("cartProducts5").style.display = "none";
 
+      }
     }
 
     function plus5() {
@@ -183,7 +203,10 @@
         localStorage.setItem("quantity6", document.getElementById("quantity6").value)
 
       }
+      if (localStorage.getItem("quantity6") == 0) {
+        document.getElementById("cartProducts6").style.display = "none";
 
+      }
     }
 
     function plus6() {
@@ -353,7 +376,7 @@
           <!--minus button-->
           <button class="minus" onclick="minus1()">-</button>
           <!--quantity field-->
-          <input type="number" min="0" id="quantity1" step="1" value="0">
+          <input type="number" min="0" id="quantity1" step="1" value="0" readonly>
           <!--plus button-->
           <button class="plus" onclick="plus1()">+</button><br>
         </div>
@@ -370,7 +393,7 @@
 
         <div id="change2">
           <button class="minus" onclick="minus2()">-</button>
-          <input type="number" min="0" id="quantity2" step="1" value="0">
+          <input type="number" min="0" id="quantity2" step="1" value="0" readonly>
           <button class="plus" onclick="plus2()">+</button><br>
         </div>
 
@@ -383,7 +406,7 @@
 
         <div id="change3">
           <button class="minus" onclick="minus3()">-</button>
-          <input type="number" min="0" id="quantity3" step="1" value="0">
+          <input type="number" min="0" id="quantity3" step="1" value="0" readonly>
           <button class="plus" onclick="plus3()">+</button><br>
         </div>
 
@@ -396,7 +419,7 @@
 
         <div id="change4">
           <button class="minus" onclick="minus4()">-</button>
-          <input type="number" min="0" id="quantity4" step="1" value="0">
+          <input type="number" min="0" id="quantity4" step="1" value="0" readonly>
           <button class="plus" onclick="plus4()">+</button><br>
         </div>
 
@@ -409,7 +432,7 @@
 
         <div id="change5">
           <button class="minus" onclick="minus5()">-</button>
-          <input type="number" min="0" id="quantity5" step="1" value="0">
+          <input type="number" min="0" id="quantity5" step="1" value="0" readonly>
           <button class="plus" onclick="plus5()">+</button><br>
         </div>
 
@@ -422,7 +445,7 @@
 
         <div id="change6">
           <button class="minus" onclick="minus6()">-</button>
-          <input type="number" min="0" id="quantity6" step="1" value="0">
+          <input type="number" min="0" id="quantity6" step="1" value="0" readonly>
           <button class="plus" onclick="plus6()">+</button><br>
         </div>
 
