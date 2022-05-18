@@ -246,7 +246,7 @@ a:hover {
 }
 
 
-/*background image*/
+/*adding background image that covers the window without repeating - the background was designed to be light coloured so it creates contrast against dark coloured content. The background itself has four light colours in 'splash' patterns to make it aesthetically pleasing*/
 body {
     background-image: url(images/background.png);
     background-repeat: no-repeat;
@@ -255,6 +255,7 @@ body {
 
 }
 
+/*aligning the three boxes in home page, with a translucent background colour and box shadow for contrast*/
 .mensImg,
 .womensImg,
 .description {
@@ -268,12 +269,14 @@ body {
     padding: 3%;
 }
 
+/*aligning description box*/
 .description {
     justify-self: stretch;
     align-self: stretch;
     align-items: center;
 }
 
+/*aligning the text in the three boxes in homepage*/
 .mens,
 .womens,
 .descriptionText {
@@ -287,12 +290,14 @@ body {
     padding: 4%
 }
 
+/*font sizes*/
 .mens a,
 .womens a,
 .descriptionText p {
     font-size: 28px;
 }
 
+/*aligning and positioning the two dots in the slider to show which slide the user is in*/
 #dot1 {
     grid-row: 2/3;
     grid-column: 2/3;
@@ -314,16 +319,19 @@ body {
 
 }
 
-.mens:hover {
+/*increase font size when hovering over links to show the user is clicking on the correct link and that it is working*/
+.mens:hover,
+.womens:hover {
     transform: scale(1.1);
 }
 
-
-.mens {
+.mens,
+.womens {
     transition: transform 0.2;
 
 }
 
+/*grid for contact and sizing pages*/
 .contact,
 .size {
     grid-row: 2/3;
@@ -331,11 +339,11 @@ body {
     display: grid;
     grid-template-columns: 5% 1fr 5% 1fr 5%;
     grid-template-rows: auto;
-
     grid-gap: 6%;
     margin-top: 6%;
 }
 
+/*positioning of contact details column*/
 .details {
     grid-row: 1/2;
     grid-column: 4/5;
@@ -343,11 +351,13 @@ body {
     margin-right: 20px;
 }
 
+/*alinging text in contact details*/
 .details p {
     text-align: center;
     vertical-align: middle;
 }
 
+/*positioning map*/
 .map {
     grid-row: 2/3;
     grid-column: 4/5;
@@ -355,11 +365,13 @@ body {
     margin-right: 20px;
 }
 
+/*dimensions of map*/
 iframe {
     width: 30vw;
     height: 30vh;
 }
 
+/*positioning contact form*/
 .contactForm {
     grid-row: 1/3;
     grid-column: 2/3;
@@ -367,6 +379,7 @@ iframe {
     margin-top: 5%;
 }
 
+/*translucent background and box shadow for checkout page that creates contrast against the main background*/
 .checkoutBackground {
     grid-row: 1/2;
     grid-column: 2/4;
@@ -378,6 +391,7 @@ iframe {
 
 }
 
+/*translucent background and box shadow for contact page that creates contrast against the main background*/
 .contactBackground {
     grid-row: 1/3;
     grid-column: 2/5;
@@ -388,32 +402,35 @@ iframe {
     height: 100%;
 }
 
+/*dimensions for text box in contact form*/
 #yourMessage {
     min-height: 100px;
 }
 
+/*aligning text and forms in contact page*/
 .contactForm p,
 .contactForm form {
     text-align: center;
     vertical-align: middle;
 }
 
+/*dimensions for contact button*/
 #contactSubmit {
     padding: 1%
 }
 
+/*grid for profucts page*/
 .products {
     display: grid;
     grid-template-columns: 5% 1fr 5% 1fr 5% 1fr 5%;
     grid-template-rows: auto;
     grid-gap: 20px;
-    ;
 }
 
+/*aligning each product in the grid*/
 #product1 {
     grid-column: 2/3;
     grid-row: 1/2;
-
 }
 
 #product2 {
@@ -441,28 +458,36 @@ iframe {
     grid-row: 2/3;
 }
 
+/*show description when user hovers over product. this allows user to see the description only if they hover on them - this makes the page more organised and less messy while allowing interested cutomers to still view the description*/
 .productImgs:hover+.productTextDivs {
     display: block;
 }
 
+/*show description when user hovers over text. this allows user to see the description only if they hover on them - this makes the page more organised and less messy while allowing interested cutomers to still view the description*/
 .productTextDivs:hover {
     display: block;
 }
 
+/*recude opacity when hovering over product - this creates contrast against the description text*/
 .productImgs:hover {
     opacity: 0.6;
 }
 
+/*aligning descriptions*/
 .productTextDivs {
     display: none;
     text-align: center;
+    justify-self: center;
+    align-self: center;
     z-index: 2;
 }
 
+/*removing bullet-style ordering*/
 li {
     list-style: none;
 }
 
+/*poditions and dimensions of images*/
 .productImgs {
     width: 100%;
     height: auto;
@@ -471,6 +496,7 @@ li {
     margin-top: 10%;
 }
 
+/*sub grid for each image with background color and box shadow for contrast against background*/
 .productImgDivs {
     display: grid;
     grid-template-columns: 1fr;
@@ -481,12 +507,7 @@ li {
     box-shadow: 5px 5px 5px grey;
 }
 
-
-.productTextDivs {
-    justify-self: center;
-    align-self: center;
-}
-
+/*aligning each image and text -to be in same cell- in each subgrid*/
 #product1TextDiv,
 #product1Img {
     grid-column: 1/2;
@@ -523,39 +544,45 @@ li {
     grid-row: 1/2;
 }
 
+/*aligning prices*/
 .productPrices {
     justify-self: center;
     text-align: center;
 }
 
+/*dimensions for quantity box*/
 .cartProducts input {
     max-width: 100px;
 }
 
+/*align quantity*/
 input {
     text-align: center;
 }
 
+/*align add to cart button*/
 .productImgDivs button {
     justify-self: center;
 }
 
+/*grid for cart*/
 .cartHome {
     display: grid;
     grid-template-columns: 5% 1fr 5%;
     grid-template-rows: auto;
 }
 
+/*sub grid for each product with translucent background and box shadow for contrast against background*/
 .cartProducts {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 5px 5px 5px grey;
-
     margin-bottom: 1%;
 }
 
+/*sub grid for total price with translucent background and box shadow for contrast against background*/
 .price {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -566,17 +593,13 @@ input {
     margin-bottom: 1%;
 }
 
+/*positining list of products*/
 .cart {
     margin-top: 2%;
     grid-column: 2/3;
 }
 
-#change1 {
-    grid-column: 2/3;
-    justify-self: middle;
-    align-self: middle;
-}
-
+/*dimensions and alignment of product images in cart`*/
 .cartProducts img {
     width: 50%;
     height: auto;
@@ -585,12 +608,14 @@ input {
     padding-bottom: 5%;
 }
 
+/*aligning text in cart*/
 .cartProducts p {
     text-align: center;
     vertical-align: middle;
     align-self: center;
 }
 
+/*aligning minus, plus and quantity*/
 #change1,
 #change2,
 #change3,
@@ -601,6 +626,7 @@ input {
     align-self: center;
 }
 
+/*aligning and display of cart empty message*/
 #empty {
     text-align: center;
     margin-top: 20%;
@@ -609,6 +635,7 @@ input {
 
 }
 
+/*aligning checkout button*/
 #checkoutButton {
     text-align: center;
     margin-left: 45%;
@@ -617,32 +644,34 @@ input {
     padding: 1% 1% 1% 1%;
 }
 
-
+/*positioning checkout forms in grid*/
 .checkout {
     grid-row: 2/3;
     grid-column: 1/4;
     display: grid;
     grid-template-columns: 5% 1fr 1fr 5%;
     grid-template-rows: auto;
-
     grid-gap: 6%;
     margin-top: 6%;
 }
 
+/*aligning column 1 of checkout form*/
 .col1 {
     grid-column: 2/3;
     grid-row: 1/2;
     justify-self: center;
-    padding: 1% 1% 1% 1%;
+    padding: 2% 1% 1% 3%;
 }
 
+/*aligning column 2 of checkout form*/
 .col2 {
     grid-column: 3/4;
     grid-row: 1/2;
-    padding: 1% 1% 1% 1%;
+    padding: 2% 1% 1% 3%;
     justify-self: center;
 }
 
+/*aligning total price in cart*/
 #totalPrice {
     grid-column: 4/5;
     text-align: center;
@@ -650,40 +679,48 @@ input {
     align-self: center;
 }
 
+/*aligning text in total price in cart*/
 #totalText p {
     text-align: center;
     vertical-align: middle;
     align-self: center;
 }
 
+/*aligning input fields in checkout form*/
 form input {
     text-align: left;
 }
 
+/*aligning checkout button*/
 #confirmButton {
-    padding: 1% 1% 1% 1%;
+    padding: 2% 2% 2% 2%;
     text-align: center;
     margin-left: 30%;
+    font-size: 0.8em;
+}
+
+/*make products bigger when hovering over them for visual effect*/
+.productImgs:hover {
+    transform: scale(1.08);
 }
 
 .productImgs {
     transition: transform .1s;
 }
 
-.productImgs:hover {
-    transform: scale(1.08);
-}
-
+/*aligning sizing table*/
 .table {
     grid-column: 2/3;
     grid-row: 2/3;
 }
 
+/*aligning size calculator*/
 .calc {
     grid-row: 2/3;
     grid-column: 4/5;
 }
 
+/*border for size table to create contrast against background*/
 table,
 th,
 td {
@@ -692,6 +729,7 @@ td {
 
 }
 
+/*spacing for table*/
 table {
     margin-top: 4%;
     margin-left: 4%;
@@ -699,27 +737,31 @@ table {
 
 }
 
+/*dimensions for column 1*/
 td {
     min-width: 80px
 }
 
+/*spacing for cells*/
 th,
 td {
     padding: 2% 2% 2% 2%;
-
     text-align: center;
 }
 
+/*give every second row a background colour of grey to create contrast against other rows*/
 tr:nth-child(even) {
     background-color: lightGray;
 }
 
+/*aligning page heading for sizing*/
 .sizeHeading {
     grid-column: 3/4;
     grid-row: 1/2;
     margin-top: 20px;
 }
 
+/*spacing for products*/
 #product4,
 #product5,
 #product6 {
