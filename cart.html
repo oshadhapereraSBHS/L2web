@@ -1,486 +1,492 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <title>MyShirt</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, initial-scale=1">
+    <meta name="keywords" content="clothing, tshirt, myshirt">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
+    <title>MyShirt</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+    <script>
+        window.onload = function () {
+            //don't show items that weren't added to cart (if quantity is 0 or null)
+            if (localStorage.getItem("quantity1") == 0 || localStorage.getItem("quantity1") == null) {
+                document.getElementById("cartProducts1").style.display = "none";
+
+            }
+            if (localStorage.getItem("quantity2") == 0 || localStorage.getItem("quantity2") == null) {
+                document.getElementById("cartProducts2").style.display = "none";
+            }
+
+            if (localStorage.getItem("quantity3") == 0 || localStorage.getItem("quantity3") == null) {
+                document.getElementById("cartProducts3").style.display = "none";
+
+            }
+            if (localStorage.getItem("quantity4") == 0 || localStorage.getItem("quantity4") == null) {
+                document.getElementById("cartProducts4").style.display = "none";
+
+            }
+            if (localStorage.getItem("quantity5") == 0 || localStorage.getItem("quantity5") == null) {
+                document.getElementById("cartProducts5").style.display = "none";
+
+            }
+            if (localStorage.getItem("quantity6") == 0 || localStorage.getItem("quantity6") == null) {
+                document.getElementById("cartProducts6").style.display = "none";
+
+            }
+
+
+            //update the stored quantities by storing the values in the cart. This allows users to change quantities in the cart page.
+            document.getElementById("quantity1").value = localStorage.getItem("quantity1");
+            document.getElementById("quantity2").value = localStorage.getItem("quantity2");
+            document.getElementById("quantity3").value = localStorage.getItem("quantity3");
+            document.getElementById("quantity4").value = localStorage.getItem("quantity4");
+            document.getElementById("quantity5").value = localStorage.getItem("quantity5");
+            document.getElementById("quantity6").value = localStorage.getItem("quantity6");
+
+
+
+        }
+
+        //removing items from cart
+
+        function remove1() {
+            //set item quantity to 0
+            document.getElementById("quantity1").value = 0;
+            //remove item from cart
+            document.getElementById("cartProducts1").style.display = "none";
+            //store the quantity as 0
+            localStorage.setItem("quantity1", document.getElementById("quantity1").value)
+
+        }
+
+        //above repeated for every product
+        function remove2() {
+            document.getElementById("cartProducts2").style.display = "none";
+            localStorage.setItem("quantity2", 0)
+
+        }
+
+        function remove3() {
+            document.getElementById("cartProducts3").style.display = "none";
+            localStorage.setItem("quantity3", 0)
+
+        }
+
+        function remove4() {
+            document.getElementById("cartProducts4").style.display = "none";
+            localStorage.setItem("quantity4", 0)
+
+        }
+
+        function remove5() {
+            document.getElementById("cartProducts5").style.display = "none";
+            localStorage.setItem("quantity5", 0)
+
+        }
+
+        function remove6() {
+            document.getElementById("cartProducts6").style.display = "none";
+            localStorage.setItem("quantity6", 0)
+
+        }
+
+
+
+        function minus1() {
+            //if the product in the cart (so quantity is > 0)
+            if (localStorage.getItem("quantity1") > 0) {
+                //reduce quantity by 1
+                document.getElementById("quantity1").stepDown();
+                //store new value as quantity
+                localStorage.setItem("quantity1", document.getElementById("quantity1").value);
+
+            }
+            //if user removes items using minus button
+            if (localStorage.getItem("quantity1") == 0) {
+                //remove products from cart
+                document.getElementById("cartProducts1").style.display = "none";
+
+            }
+        }
+
+        function plus1() {
+            //increase quantity by 1
+            document.getElementById("quantity1").stepUp();
+            //store new value as quantity
+            localStorage.setItem("quantity1", document.getElementById("quantity1").value)
+
+        }
+
+        //above repeated for every product
+        function minus2() {
+            if (localStorage.getItem("quantity2") > 0) {
+                document.getElementById("quantity2").stepDown();
+                localStorage.setItem("quantity2", document.getElementById("quantity2").value)
+            }
+
+            if (localStorage.getItem("quantity2") == 0) {
+                document.getElementById("cartProducts2").style.display = "none";
+
+            }
+
+        }
+
+        function plus2() {
+            document.getElementById("quantity2").stepUp();
+            localStorage.setItem("quantity2", document.getElementById("quantity2").value)
+
+        }
+
+
+        function minus3() {
+            if (localStorage.getItem("quantity3") > 0) {
+                document.getElementById("quantity3").stepDown();
+                localStorage.setItem("quantity3", document.getElementById("quantity3").value)
+
+            }
+            if (localStorage.getItem("quantity3") == 0) {
+                document.getElementById("cartProducts3").style.display = "none";
+
+            }
+        }
+
+        function plus3() {
+
+            document.getElementById("quantity3").stepUp();
+            localStorage.setItem("quantity3", document.getElementById("quantity3").value)
+
+        }
+
+        function minus4() {
+            if (localStorage.getItem("quantity4") > 0) {
+
+                document.getElementById("quantity4").stepDown();
+                localStorage.setItem("quantity4", document.getElementById("quantity4").value)
+
+            }
+            if (localStorage.getItem("quantity4") == 0) {
+                document.getElementById("cartProducts4").style.display = "none";
+
+            }
+        }
+
+        function plus4() {
+            document.getElementById("quantity4").stepUp();
+
+            localStorage.setItem("quantity4", document.getElementById("quantity4").value)
+
+        }
+
+        function minus5() {
+            if (localStorage.getItem("quantity5") > 0) {
+                document.getElementById("quantity5").stepDown();
+                localStorage.setItem("quantity5", document.getElementById("quantity5").value)
+
+            }
+            if (localStorage.getItem("quantity5") == 0) {
+                document.getElementById("cartProducts5").style.display = "none";
+
+            }
+        }
+
+        function plus5() {
+
+            document.getElementById("quantity5").stepUp();
+            localStorage.setItem("quantity5", document.getElementById("quantity5").value)
+
+        }
+
+        function minus6() {
+            if (localStorage.getItem("quantity6") > 0) {
+                document.getElementById("quantity6").stepDown();
+                localStorage.setItem("quantity6", document.getElementById("quantity6").value)
+
+            }
+            if (localStorage.getItem("quantity6") == 0) {
+                document.getElementById("cartProducts6").style.display = "none";
+
+            }
+        }
+
+        function plus6() {
+            document.getElementById("quantity6").stepUp();
+            localStorage.setItem("quantity6", document.getElementById("quantity6").value)
+
+
+        }
+
+        //when checkout button is pressed, take user to checkout.html
+        function checkout() {
+            location.href = "checkout.html"
+        }
+
+        //take user to index.html when logo is clicked
+        function homepage() {
+            location.href = "index.html"
+        }
+
+        //check whether font needs to be changed every 0.2 second
+        setInterval(changeFontSize, 200);
+
+        function changeFontSize() {
+            if (window.innerWidth < 1280 && window.innerWidth >= 908) {
+                //if window width is smaller than 1280
+                //change navigation text to 20px
+                document.getElementById("nav1").style.fontSize = "20px"
+                document.getElementById("nav2").style.fontSize = "20px"
+                document.getElementById("nav3").style.fontSize = "20px"
+                document.getElementById("nav4").style.fontSize = "20px"
+                document.getElementById("nav5").style.fontSize = "20px"
+                document.getElementById("itemNumber").style.fontSize = "20px"
+            } else if (window.innerWidth < 908) {
+                //if window width is smaller than 1280
+                //change navigation text to 16px
+                document.getElementById("nav1").style.fontSize = "16px"
+                document.getElementById("nav2").style.fontSize = "16px"
+                document.getElementById("nav3").style.fontSize = "16px"
+                document.getElementById("nav4").style.fontSize = "16px"
+                document.getElementById("nav5").style.fontSize = "16px"
+                document.getElementById("itemNumber").style.fontSize = "16px"
+            } else {
+                //if window width is bigger than 1280
+                //change navigation text to 25px
+                document.getElementById("nav1").style.fontSize = "23px"
+                document.getElementById("nav2").style.fontSize = "23px"
+                document.getElementById("nav3").style.fontSize = "23px"
+                document.getElementById("nav4").style.fontSize = "23px"
+                document.getElementById("nav5").style.fontSize = "23px"
+                document.getElementById("itemNumber").style.fontSize = "23px"
+            }
+        }
+
+        //update item number shown beside cart every 0.2 second
+
+        setInterval(updateItemNumber, 200);
+
+        function updateItemNumber() {
+            //set a variable for total quantity of items
+            var totalItems = (localStorage.getItem("quantity1") * 1 +
+                localStorage.getItem("quantity2") * 1 +
+                localStorage.getItem("quantity3") * 1 +
+                localStorage.getItem("quantity4") * 1 +
+                localStorage.getItem("quantity5") * 1 +
+                localStorage.getItem("quantity6") * 1);
+
+            if (totalItems > 0 && totalItems != null) {
+                //if total item number is above 0 or null, show item number beside cart
+                document.getElementById("itemNumber").style.display = "block";
+                document.getElementById("itemNumber").innerHTML = totalItems;
+            } else {
+                //if total item number is below 0, don't show item number beside cart
+                document.getElementById("itemNumber").style.display = "none";
+            }
+
+        }
+
+        //update total every 0.2 seconds
+        setInterval(updateItems, 200);
+
+        function updateItems() {
+            //show total for each item by multiplying quantity with price for each item
+            document.getElementById("total1").innerHTML = '$' + localStorage.getItem("quantity1") * 10.99;
+            document.getElementById("total2").innerHTML = '$' + localStorage.getItem("quantity2") * 11.99;
+            document.getElementById("total3").innerHTML = '$' + localStorage.getItem("quantity3") * 8.99;
+            document.getElementById("total4").innerHTML = '$' + localStorage.getItem("quantity4") * 10.99;
+            document.getElementById("total5").innerHTML = '$' + localStorage.getItem("quantity5") * 11.99;
+            document.getElementById("total6").innerHTML = '$' + localStorage.getItem("quantity6") * 8.99;
+
+            //calculate total price by adding all individual prices
+            var totalPrice = (localStorage.getItem("quantity1") * 10.99 +
+                localStorage.getItem("quantity2") * 11.99 +
+                localStorage.getItem("quantity3") * 8.99 +
+                localStorage.getItem("quantity4") * 10.99 +
+                localStorage.getItem("quantity5") * 11.99 +
+                localStorage.getItem("quantity6") * 8.99)
+
+
+            //show total price
+            document.getElementById("totalPrice").innerHTML = '$' + totalPrice;
+
+            //calculate total items in cart
+            var totalItems = (localStorage.getItem("quantity1") * 1 +
+                localStorage.getItem("quantity2") * 1 +
+                localStorage.getItem("quantity3") * 1 +
+                localStorage.getItem("quantity4") * 1 +
+                localStorage.getItem("quantity5") * 1 +
+                localStorage.getItem("quantity6") * 1);
+
+            if (totalItems == 0) {
+                //if cart is empty
+                //say cart is empty, and hide the checkout button and total price field
+                document.getElementById("empty").style.display = "block";
+                document.getElementById("empty").innerHTML = "Your cart is empty.";
+                document.getElementById("checkoutButton").style.display = "none";
+                document.getElementById("price").style.display = "none";
+
+            } else {
+                //if there are items in cart, show checkout button and hide 'cart is empty' message
+                document.getElementById("empty").style.display = "none";
+                document.getElementById("checkoutButton").style.display = "block";
+
+            }
+        }
+    </script>
 </head>
 
 <body>
 
-  <script>
-    window.onload = function () {
-      //don't show items that weren't added to cart (if quantity is 0 or null)
-      if (localStorage.getItem("quantity1") == 0 || localStorage.getItem("quantity1") == null) {
-        document.getElementById("cartProducts1").style.display = "none";
+    <!--grid for page-->
+    <div class="cartHome">
+
+        <nav>
+            <div class="logo" onclick="homepage()">
+                <!--logo image-->
+                <img class="logoImg" alt="logo" src="images/logo.png">
+            </div>
+
+            <!--navigation bar-->
+            <a id="nav1" class="navLink" href="index.html">Home</a>
+            <a id="nav2" class="navLink" href="products.html">Products</a>
+            <a id="nav3" class="navLink" href="size.html">Sizes</a>
+            <a id="nav4" class="navLink" href="contact.html">Contact</a>
+
+            <!--cart icon-->
+            <a id="nav5" class="navLink" href="cart.html">
+                <img class="navLink" alt="cart" src="images/cart.png">
+            </a>
+            <!--item total-->
+            <a id="nav6" class="navLink" href="cart.html">
+                <p id="itemNumber"></p>
+            </a>
+        </nav>
+
+
+
+
+        <!--grud for content-->
+        <ul class="cart">
+
+            <!--product 1-->
+            <li class="cartProducts" id="cartProducts1">
+
+                <!--product image-->
+                <img src="images/blue_tshirt.png" alt="tshirt">
 
-      }
-      if (localStorage.getItem("quantity2") == 0 || localStorage.getItem("quantity2") == null) {
-        document.getElementById("cartProducts2").style.display = "none";
-      }
+                <div id="change1">
+                    <!--minus button-->
+                    <button class="minus" onclick="minus1()">-</button>
+                    <!--quantity field-->
+                    <input type="number" min="0" id="quantity1" step="1" value="0" readonly>
+                    <!--plus button-->
+                    <button class="plus" onclick="plus1()">+</button><br>
+                </div>
+                <!--remove button-->
+                <p onclick="remove1()">Remove</p>
 
-      if (localStorage.getItem("quantity3") == 0 || localStorage.getItem("quantity3") == null) {
-        document.getElementById("cartProducts3").style.display = "none";
+                <!--total price-->
+                <p id="total1"></p>
+            </li>
 
-      }
-      if (localStorage.getItem("quantity4") == 0 || localStorage.getItem("quantity4") == null) {
-        document.getElementById("cartProducts4").style.display = "none";
+            <!--same format as above for the rest of the products-->
+            <li class="cartProducts" id="cartProducts2">
+                <img src="images/green_tshirt.png" alt="tshirt">
 
-      }
-      if (localStorage.getItem("quantity5") == 0 || localStorage.getItem("quantity5") == null) {
-        document.getElementById("cartProducts5").style.display = "none";
+                <div id="change2">
+                    <button class="minus" onclick="minus2()">-</button>
+                    <input type="number" min="0" id="quantity2" step="1" value="0" readonly>
+                    <button class="plus" onclick="plus2()">+</button><br>
+                </div>
 
-      }
-      if (localStorage.getItem("quantity6") == 0 || localStorage.getItem("quantity6") == null) {
-        document.getElementById("cartProducts6").style.display = "none";
+                <p onclick="remove2()">Remove</p>
+                <p id="total2"></p>
+            </li>
 
-      }
+            <li class="cartProducts" id="cartProducts3">
+                <img src="images/yellow_tshirt.png" alt="tshirt">
 
+                <div id="change3">
+                    <button class="minus" onclick="minus3()">-</button>
+                    <input type="number" min="0" id="quantity3" step="1" value="0" readonly>
+                    <button class="plus" onclick="plus3()">+</button><br>
+                </div>
 
-      //update the stored quantities by storing the values in the cart. This allows users to change quantities in the cart page.
-      document.getElementById("quantity1").value = localStorage.getItem("quantity1");
-      document.getElementById("quantity2").value = localStorage.getItem("quantity2");
-      document.getElementById("quantity3").value = localStorage.getItem("quantity3");
-      document.getElementById("quantity4").value = localStorage.getItem("quantity4");
-      document.getElementById("quantity5").value = localStorage.getItem("quantity5");
-      document.getElementById("quantity6").value = localStorage.getItem("quantity6");
+                <p onclick="remove3()">Remove</p>
+                <p id="total3"></p>
+            </li>
 
+            <li class="cartProducts" id="cartProducts4">
+                <img src="images/blue_tshirt_w.png" alt="tshirt">
 
+                <div id="change4">
+                    <button class="minus" onclick="minus4()">-</button>
+                    <input type="number" min="0" id="quantity4" step="1" value="0" readonly>
+                    <button class="plus" onclick="plus4()">+</button><br>
+                </div>
 
-    }
+                <p onclick="remove4()">Remove</p>
+                <p id="total4"></p>
+            </li>
 
-    //removing items from cart
+            <li class="cartProducts" id="cartProducts5">
+                <img src="images/green_tshirt_w.png" alt="tshirt">
 
-    function remove1() {
-      //set item quantity to 0
-      document.getElementById("quantity1").value = 0;
-      //remove item from cart
-      document.getElementById("cartProducts1").style.display = "none";
-      //store the quantity as 0
-      localStorage.setItem("quantity1", document.getElementById("quantity1").value)
+                <div id="change5">
+                    <button class="minus" onclick="minus5()">-</button>
+                    <input type="number" min="0" id="quantity5" step="1" value="0" readonly>
+                    <button class="plus" onclick="plus5()">+</button><br>
+                </div>
 
-    }
+                <p onclick="remove5()">Remove</p>
+                <p id="total5"></p>
+            </li>
 
-    //above repeated for every product
-    function remove2() {
-      document.getElementById("cartProducts2").style.display = "none";
-      localStorage.setItem("quantity2", 0)
+            <li class="cartProducts" id="cartProducts6">
+                <img src="images/yellow_tshirt_w.png" alt="tshirt">
 
-    }
+                <div id="change6">
+                    <button class="minus" onclick="minus6()">-</button>
+                    <input type="number" min="0" id="quantity6" step="1" value="0" readonly>
+                    <button class="plus" onclick="plus6()">+</button><br>
+                </div>
 
-    function remove3() {
-      document.getElementById("cartProducts3").style.display = "none";
-      localStorage.setItem("quantity3", 0)
+                <p onclick="remove6()">Remove</p>
+                <p id="total6"></p>
+            </li>
 
-    }
+            <!--end of products list-->
 
-    function remove4() {
-      document.getElementById("cartProducts4").style.display = "none";
-      localStorage.setItem("quantity4", 0)
+            <!--totals-->
+            <li class="price" id="price">
 
-    }
+                <div id="totalText">
+                    <!--text saying total-->
+                    <p>Total</p>
+                </div>
+                <!--total price calculated-->
+                <div id="totalPrice"></div>
 
-    function remove5() {
-      document.getElementById("cartProducts5").style.display = "none";
-      localStorage.setItem("quantity5", 0)
 
-    }
+            </li>
 
-    function remove6() {
-      document.getElementById("cartProducts6").style.display = "none";
-      localStorage.setItem("quantity6", 0)
 
-    }
+            <li>
 
+                <!--field for text saying cart is empty-->
+                <p id="empty"></p>
 
+                <!--checkout button-->
+                <button id="checkoutButton" onclick="checkout()">Proceed to checkout</button>
+            </li>
 
-    function minus1() {
-      //if the product in the cart (so quantity is > 0)
-      if (localStorage.getItem("quantity1") > 0) {
-        //reduce quantity by 1
-        document.getElementById("quantity1").stepDown();
-        //store new value as quantity
-        localStorage.setItem("quantity1", document.getElementById("quantity1").value);
 
-      }
-      //if user removes items using minus button
-      if (localStorage.getItem("quantity1") == 0) {
-        //remove products from cart
-        document.getElementById("cartProducts1").style.display = "none";
+        </ul>
 
-      }
-    }
-
-    function plus1() {
-      //increase quantity by 1
-      document.getElementById("quantity1").stepUp();
-      //store new value as quantity
-      localStorage.setItem("quantity1", document.getElementById("quantity1").value)
-
-    }
-
-    //above repeated for every product
-    function minus2() {
-      if (localStorage.getItem("quantity2") > 0) {
-        document.getElementById("quantity2").stepDown();
-        localStorage.setItem("quantity2", document.getElementById("quantity2").value)
-      }
-
-      if (localStorage.getItem("quantity2") == 0) {
-        document.getElementById("cartProducts2").style.display = "none";
-
-      }
-
-    }
-
-    function plus2() {
-      document.getElementById("quantity2").stepUp();
-      localStorage.setItem("quantity2", document.getElementById("quantity2").value)
-
-    }
-
-
-    function minus3() {
-      if (localStorage.getItem("quantity3") > 0) {
-        document.getElementById("quantity3").stepDown();
-        localStorage.setItem("quantity3", document.getElementById("quantity3").value)
-
-      }
-      if (localStorage.getItem("quantity3") == 0) {
-        document.getElementById("cartProducts3").style.display = "none";
-
-      }
-    }
-
-    function plus3() {
-
-      document.getElementById("quantity3").stepUp();
-      localStorage.setItem("quantity3", document.getElementById("quantity3").value)
-
-    }
-
-    function minus4() {
-      if (localStorage.getItem("quantity4") > 0) {
-
-        document.getElementById("quantity4").stepDown();
-        localStorage.setItem("quantity4", document.getElementById("quantity4").value)
-
-      }
-      if (localStorage.getItem("quantity4") == 0) {
-        document.getElementById("cartProducts4").style.display = "none";
-
-      }
-    }
-
-    function plus4() {
-      document.getElementById("quantity4").stepUp();
-
-      localStorage.setItem("quantity4", document.getElementById("quantity4").value)
-
-    }
-
-    function minus5() {
-      if (localStorage.getItem("quantity5") > 0) {
-        document.getElementById("quantity5").stepDown();
-        localStorage.setItem("quantity5", document.getElementById("quantity5").value)
-
-      }
-      if (localStorage.getItem("quantity5") == 0) {
-        document.getElementById("cartProducts5").style.display = "none";
-
-      }
-    }
-
-    function plus5() {
-
-      document.getElementById("quantity5").stepUp();
-      localStorage.setItem("quantity5", document.getElementById("quantity5").value)
-
-    }
-
-    function minus6() {
-      if (localStorage.getItem("quantity6") > 0) {
-        document.getElementById("quantity6").stepDown();
-        localStorage.setItem("quantity6", document.getElementById("quantity6").value)
-
-      }
-      if (localStorage.getItem("quantity6") == 0) {
-        document.getElementById("cartProducts6").style.display = "none";
-
-      }
-    }
-
-    function plus6() {
-      document.getElementById("quantity6").stepUp();
-      localStorage.setItem("quantity6", document.getElementById("quantity6").value)
-
-
-    }
-
-    //when checkout button is pressed, take user to checkout.html
-    function checkout() {
-      location.href = "checkout.html"
-    }
-
-    //take user to index.html when logo is clicked
-    function homepage() {
-      location.href = "index.html"
-    }
-
-    //check whether font needs to be changed every 0.2 second
-    setInterval(changeFontSize, 200);
-
-    function changeFontSize() {
-      if (window.innerWidth < 1280 && window.innerWidth >= 908) {
-        //if window width is smaller than 1280
-        //change navigation text to 20px
-        document.getElementById("nav1").style.fontSize = "20px"
-        document.getElementById("nav2").style.fontSize = "20px"
-        document.getElementById("nav3").style.fontSize = "20px"
-        document.getElementById("nav4").style.fontSize = "20px"
-        document.getElementById("nav5").style.fontSize = "20px"
-        document.getElementById("itemNumber").style.fontSize = "20px"
-      } else if (window.innerWidth < 908) {
-        //if window width is smaller than 1280
-        //change navigation text to 16px
-        document.getElementById("nav1").style.fontSize = "16px"
-        document.getElementById("nav2").style.fontSize = "16px"
-        document.getElementById("nav3").style.fontSize = "16px"
-        document.getElementById("nav4").style.fontSize = "16px"
-        document.getElementById("nav5").style.fontSize = "16px"
-        document.getElementById("itemNumber").style.fontSize = "16px"
-      } else {
-        //if window width is bigger than 1280
-        //change navigation text to 25px
-        document.getElementById("nav1").style.fontSize = "23px"
-        document.getElementById("nav2").style.fontSize = "23px"
-        document.getElementById("nav3").style.fontSize = "23px"
-        document.getElementById("nav4").style.fontSize = "23px"
-        document.getElementById("nav5").style.fontSize = "23px"
-        document.getElementById("itemNumber").style.fontSize = "23px"
-      }
-    }
-
-    //update item number shown beside cart every 0.2 second
-
-    setInterval(updateItemNumber, 200);
-
-    function updateItemNumber() {
-      //set a variable for total quantity of items
-      var totalItems = (localStorage.getItem("quantity1") * 1 +
-        localStorage.getItem("quantity2") * 1 +
-        localStorage.getItem("quantity3") * 1 +
-        localStorage.getItem("quantity4") * 1 +
-        localStorage.getItem("quantity5") * 1 +
-        localStorage.getItem("quantity6") * 1);
-
-      if (totalItems > 0 && totalItems != null) {
-        //if total item number is above 0 or null, show item number beside cart
-        document.getElementById("itemNumber").style.display = "block";
-        document.getElementById("itemNumber").innerHTML = totalItems;
-      } else {
-        //if total item number is below 0, don't show item number beside cart
-        document.getElementById("itemNumber").style.display = "none";
-      }
-
-    }
-
-    //update total every 0.2 seconds 
-    setInterval(updateItems, 200);
-
-    function updateItems() {
-      //show total for each item by multiplying quantity with price for each item 
-      document.getElementById("total1").innerHTML = '$' + localStorage.getItem("quantity1") * 10.99;
-      document.getElementById("total2").innerHTML = '$' + localStorage.getItem("quantity2") * 11.99;
-      document.getElementById("total3").innerHTML = '$' + localStorage.getItem("quantity3") * 8.99;
-      document.getElementById("total4").innerHTML = '$' + localStorage.getItem("quantity4") * 10.99;
-      document.getElementById("total5").innerHTML = '$' + localStorage.getItem("quantity5") * 11.99;
-      document.getElementById("total6").innerHTML = '$' + localStorage.getItem("quantity6") * 8.99;
-
-      //calculate total price by adding all individual prices
-      var totalPrice = (localStorage.getItem("quantity1") * 10.99 +
-        localStorage.getItem("quantity2") * 11.99 +
-        localStorage.getItem("quantity3") * 8.99 +
-        localStorage.getItem("quantity4") * 10.99 +
-        localStorage.getItem("quantity5") * 11.99 +
-        localStorage.getItem("quantity6") * 8.99)
-
-
-      //show total price
-      document.getElementById("totalPrice").innerHTML = '$' + totalPrice;
-
-      //calculate total items in cart
-      var totalItems = (localStorage.getItem("quantity1") * 1 +
-        localStorage.getItem("quantity2") * 1 +
-        localStorage.getItem("quantity3") * 1 +
-        localStorage.getItem("quantity4") * 1 +
-        localStorage.getItem("quantity5") * 1 +
-        localStorage.getItem("quantity6") * 1);
-
-      if (totalItems == 0) {
-        //if cart is empty
-        //say cart is empty, and hide the checkout button and total price field
-        document.getElementById("empty").style.display = "block";
-        document.getElementById("empty").innerHTML = "Your cart is empty.";
-        document.getElementById("checkoutButton").style.display = "none";
-        document.getElementById("price").style.display = "none";
-
-      } else {
-        //if there are items in cart, show checkout button and hide 'cart is empty' message
-        document.getElementById("empty").style.display = "none";
-        document.getElementById("checkoutButton").style.display = "block";
-
-      }
-    }
-  </script>
-
-
-  <!--grid for page-->
-  <section class="cartHome">
-
-
-
-    <nav>
-      <div class="logo" onclick="homepage()">
-        <!--logo image-->
-        <img class="logoImg" src="images/logo.png">
-      </div>
-
-      <!--navigation bar-->
-      <a id="nav1" class="navLink" href="index.html">Home</a>
-      <a id="nav2" class="navLink" href="products.html">Products</a>
-      <a id="nav3" class="navLink" href="size.html">Sizes</a>
-      <a id="nav4" class="navLink" href="contact.html">Contact</a>
-
-      <!--cart icon-->
-      <a id="nav5" class="navLink" href="cart.html">
-        <img class="navLink" src="images/cart.png">
-      </a>
-      <!--item total-->
-      <a id="nav6" class="navLink" href="cart.html">
-        <p id="itemNumber"></p>
-      </a>
-    </nav>
-
-
-
-    <!--grud for content-->
-    <ul class="cart">
-
-      <!--product 1-->
-      <li class="cartProducts" id="cartProducts1">
-
-        <!--product image-->
-        <img src="images/blue tshirt.png">
-
-        <div id="change1">
-          <!--minus button-->
-          <button class="minus" onclick="minus1()">-</button>
-          <!--quantity field-->
-          <input type="number" min="0" id="quantity1" step="1" value="0" readonly>
-          <!--plus button-->
-          <button class="plus" onclick="plus1()">+</button><br>
-        </div>
-        <!--remove button-->
-        <p onclick="remove1()">Remove</p>
-
-        <!--total price-->
-        <p id="total1"></p>
-      </li>
-
-      <!--same format as above for the rest of the products-->
-      <li class="cartProducts" id="cartProducts2">
-        <img src="images/green tshirt.png">
-
-        <div id="change2">
-          <button class="minus" onclick="minus2()">-</button>
-          <input type="number" min="0" id="quantity2" step="1" value="0" readonly>
-          <button class="plus" onclick="plus2()">+</button><br>
-        </div>
-
-        <p onclick="remove2()">Remove</p>
-        <p id="total2"></p>
-      </li>
-
-      <li class="cartProducts" id="cartProducts3">
-        <img src="images/yellow tshirt.png">
-
-        <div id="change3">
-          <button class="minus" onclick="minus3()">-</button>
-          <input type="number" min="0" id="quantity3" step="1" value="0" readonly>
-          <button class="plus" onclick="plus3()">+</button><br>
-        </div>
-
-        <p onclick="remove3()">Remove</p>
-        <p id="total3"></p>
-      </li>
-
-      <li class="cartProducts" id="cartProducts4">
-        <img src="images/blue tshirt w.png">
-
-        <div id="change4">
-          <button class="minus" onclick="minus4()">-</button>
-          <input type="number" min="0" id="quantity4" step="1" value="0" readonly>
-          <button class="plus" onclick="plus4()">+</button><br>
-        </div>
-
-        <p onclick="remove4()">Remove</p>
-        <p id="total4"></p>
-      </li>
-
-      <li class="cartProducts" id="cartProducts5">
-        <img src="images/green tshirt w.png">
-
-        <div id="change5">
-          <button class="minus" onclick="minus5()">-</button>
-          <input type="number" min="0" id="quantity5" step="1" value="0" readonly>
-          <button class="plus" onclick="plus5()">+</button><br>
-        </div>
-
-        <p onclick="remove5()">Remove</p>
-        <p id="total5"></p>
-      </li>
-
-      <li class="cartProducts" id="cartProducts6">
-        <img src="images/yellow tshirt w.png">
-
-        <div id="change6">
-          <button class="minus" onclick="minus6()">-</button>
-          <input type="number" min="0" id="quantity6" step="1" value="0" readonly>
-          <button class="plus" onclick="plus6()">+</button><br>
-        </div>
-
-        <p onclick="remove6()">Remove</p>
-        <p id="total6"></p>
-      </li>
-
-      <!--end of products list-->
-
-      <!--totals-->
-      <li class="price" id="price">
-
-        <div id="totalText">
-          <!--text saying total-->
-          <p>Total</p>
-        </div>
-        <!--total price calculated-->
-        <div id="totalPrice"></div>
-
-
-      </li>
-
-      <!--field for text saying cart is empty-->
-      <p id="empty"></p>
-
-      <!--checkout button-->
-      <button id="checkoutButton" onclick="checkout()">Proceed to checkout</button>
-
-
-
-
-    </ul>
-
-
-
-
-  </section>
+    </div>
 </body>
+
+</html>

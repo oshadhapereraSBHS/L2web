@@ -97,15 +97,7 @@ nav a {
     line-height: 2em;
 }
 
-/*sizes for images in the slides that changes as the window size is changed. this creates a organised, easy to read, user friendly layout by responding to the window size used by user*/
-.sliderImg img {
-    max-width: 300px;
-    max-height: 300px;
-    min-width: 150px;
-    min-height: 150px;
-    width: 20vw;
-    height: 20vw;
-}
+
 
 /*grid for slider, with background image*/
 .slider {
@@ -114,32 +106,36 @@ nav a {
     display: grid;
     grid-template-columns: 5% 1fr 1fr 5%;
     grid-template-rows: auto;
-    background-image: url('images/sliderimg2.png');
-    padding: 2%;
+    padding: 2% 0 2% 0;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-top: 2%
+    margin-top: 2%;
 }
+
+/*dimensions for slider image*/
+#sliderBackground {
+    width: 100%;
+    height: 100%;
+    max-height: 350px;
+}
+
+
+/*zoom left and right arrows when hovering to show the links are working*/
+#leftArrowButton:hover {
+    transform: scale(1.15);
+}
+
+#rightArrowButton:hover {
+    transform: scale(1.15);
+}
+
 
 /*positioning images in slider grid`*/
 .sliderImg {
-    grid-column: 2/3;
+    grid-column: 1/5;
     grid-row: 1/3;
-    justify-self: center;
-    align-self: center;
-}
-
-/*positioning text in slider*/
-.sliderText {
-    grid-column: 3/4;
-    justify-self: center;
-    align-self: center;
-}
-
-/*font size for slide text and text shadow for contrast*/
-.sliderText {
-    font-size: 28px;
-    text-shadow: -5px 5px 10px rgba(0, 0, 0, 0.3)
+    justify-self: stretch;
+    z-index: -1;
 }
 
 /*positioning of shop now button*/
@@ -150,7 +146,7 @@ nav a {
     align-self: center;
     display: flex;
     justify-content: center;
-
+    margin-bottom: 9%;
 }
 
 /*colour and font size for slide arrows*/
@@ -168,6 +164,7 @@ nav a {
     background-color: transparent;
     color: rgba(255, 255, 255, 0.8);
     font-size: 40px;
+
 }
 
 /*positioning left arrow in slide*/
@@ -238,11 +235,15 @@ a:hover {
     background-color: #441a4b;
     border-radius: 30px;
     color: white;
-    border-color: #441a4b;
+    border: none;
     font-size: clamp(10px, 1.3em, 20px);
-
     padding: 2%;
     box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5)
+}
+
+/*change background color of button when hovering over it - add aesthetic appeal and lets user know the link is working*/
+#shopNowButton:hover {
+    background-color: rgb(52, 45, 105);
 }
 
 
@@ -304,6 +305,7 @@ body {
     justify-self: end;
     align-self: end;
     margin-right: 1%;
+    margin-bottom: 2%;
 }
 
 #dot2 {
@@ -312,6 +314,7 @@ body {
     justify-self: start;
     align-self: end;
     margin-left: 1%;
+    margin-bottom: 2%;
 }
 
 .dot img {
@@ -327,8 +330,7 @@ body {
 
 .mens,
 .womens {
-    transition: transform 0.2;
-
+    transition: transform .1s;
 }
 
 /*grid for contact and sizing pages*/
@@ -341,6 +343,7 @@ body {
     grid-template-rows: auto;
     grid-gap: 6%;
     margin-top: 6%;
+
 }
 
 /*positioning of contact details column*/
@@ -414,9 +417,10 @@ iframe {
     vertical-align: middle;
 }
 
-/*dimensions for contact button*/
+/*spacing for contact button*/
 #contactSubmit {
-    padding: 1%
+    padding: 1%;
+    margin-bottom: 2%;
 }
 
 /*grid for profucts page*/
@@ -555,6 +559,15 @@ li {
     max-width: 100px;
 }
 
+/*dimensions for quantity box in products page*/
+.productPrices input {
+    width: 14vw;
+}
+
+.cartProducts p:hover {
+    text-decoration: underline;
+}
+
 /*align quantity*/
 input {
     text-align: center;
@@ -652,7 +665,7 @@ input {
     grid-template-columns: 5% 1fr 1fr 5%;
     grid-template-rows: auto;
     grid-gap: 6%;
-    margin-top: 6%;
+    margin-top: 4%;
 }
 
 /*aligning column 1 of checkout form*/
@@ -766,4 +779,9 @@ tr:nth-child(even) {
 #product5,
 #product6 {
     margin-bottom: 8%
+}
+
+/*make shirt size output bold for more contrast*/
+#shirtsize {
+    font-weight: bold;
 }

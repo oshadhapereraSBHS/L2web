@@ -1,11 +1,14 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, initial-scale=1">
+    <meta name="keywords" content="clothing, tshirt, myshirt">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
     <title>MyShirt</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
 
     <script>
         window.onload = function () {
@@ -109,7 +112,7 @@
         }
 
         function plus4() {
-            document.getElementById("quantity5").stepUp();
+            document.getElementById("quantity4").stepUp();
             localStorage.setItem("quantity4", document.getElementById("quantity4").value)
 
 
@@ -239,16 +242,19 @@
         }
     </script>
 
+</head>
+
+<body>
 
     <!--grid for page-->
-    <section class="home">
+    <div class="home">
 
 
 
         <nav>
             <div class="logo" onclick="homepage()">
                 <!--logo image-->
-                <img class="logoImg" src="images/logo.png">
+                <img class="logoImg" alt="logo" src="images/logo.png">
             </div>
 
             <!--navigation bar-->
@@ -259,7 +265,7 @@
 
             <!--cart icon-->
             <a id="nav5" class="navLink" href="cart.html">
-                <img class="navLink" src="images/cart.png">
+                <img class="navLink" alt="cart" src="images/cart.png">
             </a>
             <!--item total-->
             <a id="nav6" class="navLink" href="cart.html">
@@ -275,7 +281,7 @@
             <!--product 1-->
             <li class="productImgDivs" id="product1">
                 <!--product image-->
-                <img class="productImgs" id="product1Img" src="images/blue tshirt.png">
+                <img class="productImgs" id="product1Img" src="images/blue_tshirt.png" alt="tshirt">
                 <!--product description-->
                 <div class="productTextDivs" id="product1TextDiv">
                     <p class="productTexts" id="product1Text">
@@ -304,7 +310,7 @@
 
             <!--same format as above for the rest of the products-->
             <li class="productImgDivs" id="product2">
-                <img class="productImgs" id="product2Img" src="images/green tshirt.png">
+                <img class="productImgs" id="product2Img" src="images/green_tshirt.png" alt="tshirt">
                 <div class="productTextDivs" id="product2TextDiv">
 
                     <p class="productTexts" id="product2Text">
@@ -325,7 +331,7 @@
             </li>
 
             <li class="productImgDivs" id="product3">
-                <img class="productImgs" id="product3Img" src="images/yellow tshirt.png">
+                <img class="productImgs" id="product3Img" src="images/yellow_tshirt.png" alt="tshirt">
                 <div class="productTextDivs" id="product3TextDiv">
 
                     <p class="productTexts" id="product3Text">
@@ -346,7 +352,7 @@
             </li>
 
             <li class="productImgDivs" id="product4">
-                <img class="productImgs" id="product4Img" src="images/blue tshirt w.png">
+                <img class="productImgs" id="product4Img" src="images/blue_tshirt_w.png" alt="tshirt">
                 <div class="productTextDivs" id="product4TextDiv">
 
                     <p class="productTexts" id="product4Text">
@@ -367,7 +373,7 @@
             </li>
 
             <li class="productImgDivs" id="product5">
-                <img class="productImgs" id="product5Img" src="images/green tshirt w.png">
+                <img class="productImgs" id="product5Img" src="images/green_tshirt_w.png" alt="tshirt">
                 <div class="productTextDivs" id="product5TextDiv">
 
                     <p class="productTexts" id="product5Text">
@@ -388,7 +394,7 @@
             </li>
 
             <li class="productImgDivs" id="product6">
-                <img class="productImgs" id="product6Img" src="images/yellow tshirt w.png">
+                <img class="productImgs" id="product6Img" src="images/yellow_tshirt_w.png" alt="tshirt">
                 <div class="productTextDivs" id="product6TextDiv">
 
                     <p class="productTexts" id="product6Text">
@@ -410,11 +416,8 @@
 
             <!--end of products-->
 
-
-
-
-
-
-            </div>
-    </section>
+        </ul>
+    </div>
 </body>
+
+</html>

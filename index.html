@@ -1,58 +1,63 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, initial-scale=1">
+    <meta name="keywords" content="clothing, tshirt, myshirt">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
     <title>MyShirt</title>
     <link rel="stylesheet" href="styles.css">
-</head>
 
-<body>
 
     <script>
-        //variable for counting slider changes
-        var sliderCount = 1;
 
-        //change slider every 3 seconds
-        setInterval(changeSlider, 3000)
+        //array for slider backgrounds
+        var backgrounds = [
+            'images/sliderimg9.png', 'images/sliderimg10.png'
+        ]
 
+        //array for dot 1 in slider
+        var dot1 = [
+            'images/dot.png', 'images/dot2.png'
+        ]
+
+        //array for dot 2 in slider
+        var dot2 = [
+          'images/dot2.png', 'images/dot.png'
+        ]
+
+        //variable for tracking slider changes
+        var sliderCount = 0
 
         function changeSlider() {
-            //when slider is changed, increase slider count by 1
+            //when slide is changeSlider
+            //increase slider count by 1
             sliderCount++;
+            //change background - using an array means this will loop through the two slider backgrounds
+            document.getElementById("sliderBackground").src = backgrounds[sliderCount];
+            //change images for dots
+            document.getElementById("dot1img").src = dot1[sliderCount];
+            document.getElementById("dot2img").src = dot2[sliderCount];
 
-            //if slider count is an even number
-            if (sliderCount % 2 == 0) {
-                //change products images in slider
-                document.getElementById("sliderImg1").src = "images/green tshirt.png";
-                document.getElementById("sliderImg2").src = "images/yellow tshirt w.png";
-                //highlight second dot to sohw it is the second slide
-                document.getElementById("dot1img").src = "images/dot2.png";
-                document.getElementById("dot2img").src = "images/dot.png";
-                //change text on slide
-                document.getElementById("sliderText").innerHTML = document.getElementById("hiddenSliderText").innerHTML
-                //change nackground image of slide
-                document.getElementById("slider").style.backgroundImage = "url('images/sliderimg8.png')"
-            } else {
-                //if slider count is an odd number
-                //switch product images back to original
-                document.getElementById("sliderImg1").src = "images/background2.png";
-                document.getElementById("sliderImg2").src = "images/background1.png";
-                //highlight first dot to show it is the first slide
-                document.getElementById("dot1img").src = "images/dot.png";
-                document.getElementById("dot2img").src = "images/dot2.png";
-                //show original text
-                document.getElementById("sliderText").innerHTML = document.getElementById("originalSliderText")
-                    .innerHTML
-                //switch background image back to original
-                document.getElementById("slider").style.backgroundImage = "url('images/sliderimg2.png')"
+            //when user changes slider once (so sliderCount is 1)
+            if (sliderCount >= 1) {
+                //change sliderCount to -1 (so it will go back to 0 and switch slider when user presses it again)
+                sliderCount = -1;
             }
         }
 
+        function previousSlide() {
+            document.getElementById("sliderBackground").src = backgrounds[0];
+            document.getElementById("dot1img").src = dot1[0];
+            document.getElementById("dot2img").src = dot2[0];
+        }
 
-
-        window.onload = function () {
-            //only show default slide text when page loads
-            document.getElementById("originalSliderText").style.display = "none";
-            document.getElementById("hiddenSliderText").style.display = "none";
+        function nextSlide() {
+            document.getElementById("sliderBackground").src = backgrounds[1];
+            document.getElementById("dot1img").src = dot1[1];
+            document.getElementById("dot2img").src = dot2[1];
         }
 
         //take user to index.html when logo is clicked
@@ -68,9 +73,6 @@
                 //if window width is smaller than 1280
                 //change all text to 20px
                 document.getElementById("descriptionTextBox").style.fontSize = "20px"
-                document.getElementById("sliderText").style.fontSize = "20px"
-                document.getElementById("hiddenSliderText").style.fontSize = "20px"
-                document.getElementById("originalSliderText").style.fontSize = "20px"
                 document.getElementById("mensLink").style.fontSize = "20px"
                 document.getElementById("womensLink").style.fontSize = "20px"
                 document.getElementById("nav1").style.fontSize = "20px"
@@ -83,9 +85,6 @@
                 //if window width is smaller than 1280
                 //change all text to 16px
                 document.getElementById("descriptionTextBox").style.fontSize = "16px"
-                document.getElementById("sliderText").style.fontSize = "16px"
-                document.getElementById("hiddenSliderText").style.fontSize = "16px"
-                document.getElementById("originalSliderText").style.fontSize = "16px"
                 document.getElementById("mensLink").style.fontSize = "16px"
                 document.getElementById("womensLink").style.fontSize = "16px"
                 document.getElementById("nav1").style.fontSize = "16px"
@@ -98,9 +97,6 @@
                 //if window width is bigger than 1280
                 //change all text to 25px
                 document.getElementById("descriptionTextBox").style.fontSize = "25px"
-                document.getElementById("sliderText").style.fontSize = "25px"
-                document.getElementById("hiddenSliderText").style.fontSize = "25px"
-                document.getElementById("originalSliderText").style.fontSize = "25px"
                 document.getElementById("mensLink").style.fontSize = "25px"
                 document.getElementById("womensLink").style.fontSize = "25px"
 
@@ -120,11 +116,11 @@
         function updateItemNumber() {
             //set a variable for total quantity of items
             var totalItems = (localStorage.getItem("quantity1") * 1 +
-            localStorage.getItem("quantity2") * 1 +
-            localStorage.getItem("quantity3") * 1 +
-            localStorage.getItem("quantity4") * 1 +
-            localStorage.getItem("quantity5") * 1 +
-            localStorage.getItem("quantity6") * 1);
+                localStorage.getItem("quantity2") * 1 +
+                localStorage.getItem("quantity3") * 1 +
+                localStorage.getItem("quantity4") * 1 +
+                localStorage.getItem("quantity5") * 1 +
+                localStorage.getItem("quantity6") * 1);
 
 
             if (totalItems > 0) {
@@ -139,14 +135,18 @@
 
         }
     </script>
+
+</head>
+
+<body>
     <!--grid for page-->
-    <section class="home">
+    <div class="home">
 
 
         <nav>
             <div class="logo" onclick="homepage()">
                 <!--logo image-->
-                <img class="logoImg" src="images/logo.png">
+                <img class="logoImg" alt="logo" src="images/logo.png">
             </div>
 
             <!--navigation bar-->
@@ -157,7 +157,7 @@
 
             <!--cart icon-->
             <a id="nav5" class="navLink" href="cart.html">
-                <img class="navLink" src="images/cart.png">
+                <img class="navLink" alt="cart" src="images/cart.png">
             </a>
             <!--item total-->
             <a id="nav6" class="navLink" href="cart.html">
@@ -171,42 +171,18 @@
 
             <!--left arrow-->
             <div id="leftArrow">
-                <button onclick="changeSlider()"><</button>
+                <button id="leftArrowButton" onclick="changeSlider()">&lt;</button>
             </div>
-                
+
             <!--right arrow-->
             <div id="rightArrow">
-                <button onclick="changeSlider()">></button>
+                <button id="rightArrowButton" onclick="changeSlider()">></button>
             </div>
 
             <!--slider background-->
             <div class="sliderImg">
-                <img id="sliderImg1" src="images/background2.png">
-                <img id="sliderImg2" src="images/background1.png">
-
+                <img id="sliderBackground" alt="tshirts" src="images/sliderimg9.png">
             </div>
-
-            <!--text in slides-->
-            <p class="sliderText" id="sliderText">
-                New season styles available now!
-                <br><br>
-                20% off for a limited time!
-            </p>
-
-            <!--slide text for slide 1-->
-            <p class="sliderText" id="originalSliderText">
-                New season styles available now!
-                <br><br>
-                20% off for a limited time!
-            </p>
-
-
-            <!--slide text for slide 2-->
-            <p class="sliderText" id="hiddenSliderText">
-                Stock clearance!
-                <br><br>
-                T-shirts from $8.99!
-            </p>
 
             <!--shop now button-->
             <div class="sliderButton">
@@ -215,12 +191,12 @@
 
             <!--two dots showing which slide is shown-->
             <div class="dot" id="dot1">
-                <img id="dot1img" src="images/dot.png">
+                <img id="dot1img" alt="dot" src="images/dot.png" onclick="previousSlide()">
             </div>
 
 
             <div class="dot" id="dot2">
-                <img id="dot2img" src="images/dot2.png">
+                <img id="dot2img" alt="dot" src="images/dot2.png" onclick="nextSlide()">
             </div>
         </div>
 
@@ -230,13 +206,13 @@
 
             <!--mens t shirt image-->
             <div class="mensImg">
-                <img id="mensImg" src="images/yellow tshirt.png">
+                <img id="mensImg" alt="tshirt" src="images/yellow_tshirt.png">
 
             </div>
 
             <!--womens t shirt image-->
             <div class="womensImg">
-                <img src="images/blue tshirt w.png">
+                <img alt="tshirt" src="images/blue_tshirt_w.png">
 
             </div>
 
@@ -262,6 +238,8 @@
 
         </div>
 
-    </section>
+    </div>
 
 </body>
+
+</html>

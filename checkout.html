@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, initial-scale=1">
+    <meta name="keywords" content="clothing, tshirt, myshirt">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
     <title>MyShirt</title>
     <link rel="stylesheet" href="styles.css">
-</head>
 
-<body>
 
     <script>
         function checkoutOverlay(event) {
@@ -102,14 +106,16 @@
         }
     </script>
 
+</head>
 
+<body>
     <!--grid for page-->
-    <section class="home">
+    <div class="home">
 
         <nav>
             <div class="logo" onclick="homepage()">
                 <!--logo image-->
-                <img class="logoImg" src="images/logo.png">
+                <img class="logoImg" alt="logo" src="images/logo.png">
             </div>
 
             <!--navigation bar-->
@@ -120,13 +126,14 @@
 
             <!--cart icon-->
             <a id="nav5" class="navLink" href="cart.html">
-                <img class="navLink" src="images/cart.png">
+                <img class="navLink" alt="cart" src="images/cart.png">
             </a>
             <!--item total-->
             <a id="nav6" class="navLink" href="cart.html">
                 <p id="itemNumber"></p>
             </a>
         </nav>
+
 
         <!--grid for content-->
         <div class="checkout">
@@ -161,7 +168,7 @@
                     <input type="text"><br><br>
 
                     <label>Post Code</label><br>
-                    <input type="text"><br><br>
+                    <input type="number"><br><br>
 
                     <input type="checkbox" checked="checked"> Shipping address same as billing
 
@@ -181,10 +188,10 @@
                     <!--form with labels and input-->
 
                     <label>Credit Card Number</label><br>
-                    <input type="text"><br><br>
+                    <input type="number"><br><br>
 
                     <label>Expiry Date</label><br>
-                    <input type="text"><br><br>
+                    <input type="number"><br><br>
 
                     <label>CVV</label><br>
                     <input type="number"><br><br>
@@ -212,5 +219,7 @@
         </div>
 
 
-    </section>
+    </div>
 </body>
+
+</html>
